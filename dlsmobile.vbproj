@@ -1,0 +1,705 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{A2B68700-8C4A-4FE2-9730-6CE7A283A4E9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>dlsmobile</RootNamespace>
+    <AssemblyName>dlsmobile</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>dlsmobile.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>dlsmobile.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\owl.carousel.css" />
+    <Content Include="assets\css\owl.theme.css" />
+    <Content Include="assets\css\photoswipe.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\img\adv-468-60%402x.jpg" />
+    <Content Include="assets\img\adv-468-60.jpg" />
+    <Content Include="assets\img\back%402x.png" />
+    <Content Include="assets\img\back-arrow%402x.png" />
+    <Content Include="assets\img\back-arrow.png" />
+    <Content Include="assets\img\back.png" />
+    <Content Include="assets\img\blog-article-date%402x.png" />
+    <Content Include="assets\img\blog-article-date.png" />
+    <Content Include="assets\img\blog-article-read-more%402x.png" />
+    <Content Include="assets\img\blog-article-read-more.png" />
+    <Content Include="assets\img\check%402x.png" />
+    <Content Include="assets\img\check.png" />
+    <Content Include="assets\img\content-images\1.jpg" />
+    <Content Include="assets\img\content-images\1f.jpg" />
+    <Content Include="assets\img\content-images\2.jpg" />
+    <Content Include="assets\img\content-images\2f.jpg" />
+    <Content Include="assets\img\content-images\3.jpg" />
+    <Content Include="assets\img\content-images\3f.jpg" />
+    <Content Include="assets\img\content-images\4.jpg" />
+    <Content Include="assets\img\content-images\4f.jpg" />
+    <Content Include="assets\img\content-images\5.jpg" />
+    <Content Include="assets\img\content-images\6.jpg" />
+    <Content Include="assets\img\content-images\blog-article-1%402x.jpg" />
+    <Content Include="assets\img\content-images\blog-article-1.jpg" />
+    <Content Include="assets\img\content-images\blog-article-2%402x.jpg" />
+    <Content Include="assets\img\content-images\blog-article-2.jpg" />
+    <Content Include="assets\img\content-images\blog-article-3%402x.jpg" />
+    <Content Include="assets\img\content-images\blog-article-3.jpg" />
+    <Content Include="assets\img\content-images\blog-article-4%402x.jpg" />
+    <Content Include="assets\img\content-images\blog-article-4.jpg" />
+    <Content Include="assets\img\content-images\no-featured-image.jpg" />
+    <Content Include="assets\img\content-images\tut1.jpg" />
+    <Content Include="assets\img\content-images\tut2.jpg" />
+    <Content Include="assets\img\content-images\tut3.jpg" />
+    <Content Include="assets\img\content-images\tut4.jpg" />
+    <Content Include="assets\img\content-images\tut5.jpg" />
+    <Content Include="assets\img\content-images\video-article-1%402x.jpg" />
+    <Content Include="assets\img\content-images\video-article-1.jpg" />
+    <Content Include="assets\img\content-images\video-article-2%402x.jpg" />
+    <Content Include="assets\img\content-images\video-article-2.jpg" />
+    <Content Include="assets\img\content-images\video-article-3%402x.jpg" />
+    <Content Include="assets\img\content-images\video-article-3.jpg" />
+    <Content Include="assets\img\content-images\video-article-4%402x.jpg" />
+    <Content Include="assets\img\content-images\video-article-4.jpg" />
+    <Content Include="assets\img\counter-bg.png" />
+    <Content Include="assets\img\facebook%402x.png" />
+    <Content Include="assets\img\facebook.png" />
+    <Content Include="assets\img\feature-1%402x.png" />
+    <Content Include="assets\img\feature-1.png" />
+    <Content Include="assets\img\feature-2%402x.png" />
+    <Content Include="assets\img\feature-2.png" />
+    <Content Include="assets\img\feature-3%402x.png" />
+    <Content Include="assets\img\feature-3.png" />
+    <Content Include="assets\img\google%402x.png" />
+    <Content Include="assets\img\google.png" />
+    <Content Include="assets\img\info%402x.png" />
+    <Content Include="assets\img\info.png" />
+    <Content Include="assets\img\logo%402x.png" />
+    <Content Include="assets\img\logo%402xbk.png" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\mail%402x.png" />
+    <Content Include="assets\img\mail.png" />
+    <Content Include="assets\img\menu%402x.png" />
+    <Content Include="assets\img\menu-icons\blog%402x.png" />
+    <Content Include="assets\img\menu-icons\blog.png" />
+    <Content Include="assets\img\menu-icons\gallery%402x.png" />
+    <Content Include="assets\img\menu-icons\gallery.png" />
+    <Content Include="assets\img\menu-icons\home%402x.png" />
+    <Content Include="assets\img\menu-icons\home.png" />
+    <Content Include="assets\img\menu-icons\information%402x.png" />
+    <Content Include="assets\img\menu-icons\information.png" />
+    <Content Include="assets\img\menu-icons\key%402x.png" />
+    <Content Include="assets\img\menu-icons\key-c%402x.png" />
+    <Content Include="assets\img\menu-icons\key-c.png" />
+    <Content Include="assets\img\menu-icons\key.png" />
+    <Content Include="assets\img\menu-icons\news%402x.png" />
+    <Content Include="assets\img\menu-icons\news.png" />
+    <Content Include="assets\img\menu-icons\star%402x.png" />
+    <Content Include="assets\img\menu-icons\star.png" />
+    <Content Include="assets\img\menu-icons\typography%402x.png" />
+    <Content Include="assets\img\menu-icons\typography.png" />
+    <Content Include="assets\img\menu-icons\video%402x.png" />
+    <Content Include="assets\img\menu-icons\video.png" />
+    <Content Include="assets\img\menu.png" />
+    <Content Include="assets\img\news-arrow.png" />
+    <Content Include="assets\img\panel\facebook%402x.png" />
+    <Content Include="assets\img\panel\facebook.png" />
+    <Content Include="assets\img\panel\google%402x.png" />
+    <Content Include="assets\img\panel\google.png" />
+    <Content Include="assets\img\panel\skype%402x.png" />
+    <Content Include="assets\img\panel\skype.png" />
+    <Content Include="assets\img\panel\twitter%402x.png" />
+    <Content Include="assets\img\panel\twitter.png" />
+    <Content Include="assets\img\panel\vimeo%402x.png" />
+    <Content Include="assets\img\panel\vimeo.png" />
+    <Content Include="assets\img\panel\youtube%402x.png" />
+    <Content Include="assets\img\panel\youtube.png" />
+    <Content Include="assets\img\photoswipe\error.gif" />
+    <Content Include="assets\img\photoswipe\icons%402x.png" />
+    <Content Include="assets\img\photoswipe\icons.png" />
+    <Content Include="assets\img\photoswipe\loader.gif" />
+    <Content Include="assets\img\pinterest%402x.png" />
+    <Content Include="assets\img\pinterest.png" />
+    <Content Include="assets\img\share%402x.png" />
+    <Content Include="assets\img\share.png" />
+    <Content Include="assets\img\tel%402x.png" />
+    <Content Include="assets\img\tel.png" />
+    <Content Include="assets\img\twitter%402x.png" />
+    <Content Include="assets\img\twitter.png" />
+    <Content Include="assets\img\video-icon%402x.png" />
+    <Content Include="assets\img\video-icon.png" />
+    <Content Include="assets\js\code.photoswipe.jquery-3.0.5.min.js" />
+    <Content Include="assets\js\custom.js" />
+    <Content Include="assets\js\jquery.validate.min.js" />
+    <Content Include="assets\js\jstorage.js" />
+    <Content Include="assets\js\klass.min.js" />
+    <Content Include="assets\js\owl.carousel.min.js" />
+    <Content Include="assets\js\retina-1.1.0.js" />
+    <Content Include="assets\js\retina.js" />
+    <Content Include="blog-single-1.html" />
+    <Content Include="blog-single-2.html" />
+    <Content Include="blog-single-3.html" />
+    <Content Include="blog-single-4.html" />
+    <Content Include="blog-single-5.html" />
+    <Content Include="blog.html" />
+    <Content Include="cc.aspx" />
+    <Content Include="cur.html" />
+    <Content Include="cursask.aspx" />
+    <Content Include="default.html" />
+    <Content Include="features.html" />
+    <Content Include="index.html" />
+    <Content Include="information.html" />
+    <Content Include="ont.aspx" />
+    <Content Include="oops.html" />
+    <Content Include="planners.html" />
+    <Content Include="resources\core\HS Algebra\Arithmetic\hs.xml" />
+    <Content Include="resources\core\HS Algebra\corecur.xml" />
+    <Content Include="resources\core\HS Algebra\Creating Equations\hs.xml" />
+    <Content Include="resources\core\HS Algebra\Reasoning with Equations\hs.xml" />
+    <Content Include="resources\core\HS Algebra\Seeing Structure\hs.xml" />
+    <Content Include="resources\core\HS Functions\Building Functions\hs.xml" />
+    <Content Include="resources\core\HS Functions\corecur.xml" />
+    <Content Include="resources\core\HS Functions\Interpreting Functions\hs.xml" />
+    <Content Include="resources\core\HS Functions\Linear Quadratic Exponential\hs.xml" />
+    <Content Include="resources\core\HS Functions\Trigonometric Functions\hs.xml" />
+    <Content Include="resources\core\HS Geometry\Circles\hs.xml" />
+    <Content Include="resources\core\HS Geometry\Congruence\hs.xml" />
+    <Content Include="resources\core\HS Geometry\corecur.xml" />
+    <Content Include="resources\core\HS Geometry\Expressing Geometric Prop\hs.xml" />
+    <Content Include="resources\core\HS Geometry\Geometric Measurement\hs.xml" />
+    <Content Include="resources\core\HS Geometry\Modeling with Geometry\hs.xml" />
+    <Content Include="resources\core\HS Geometry\Similarity R Triangles Trig\hs.xml" />
+    <Content Include="resources\core\HS Number and Quantity\Complex Number System\hs.xml" />
+    <Content Include="resources\core\HS Number and Quantity\corecur.xml" />
+    <Content Include="resources\core\HS Number and Quantity\Quantities\hs.xml" />
+    <Content Include="resources\core\HS Number and Quantity\Real Number System\hs.xml" />
+    <Content Include="resources\core\HS Number and Quantity\Vector and Matrix\hs.xml" />
+    <Content Include="resources\core\HS Statistics and Probability\corecur.xml" />
+    <Content Include="resources\core\HS Statistics and Probability\Interpreting Data\hs.xml" />
+    <Content Include="resources\core\HS Statistics and Probability\Making Inferences\hs.xml" />
+    <Content Include="resources\core\HS Statistics and Probability\Rules of Probability\hs.xml" />
+    <Content Include="resources\core\HS Statistics and Probability\Using Probability\hs.xml" />
+    <Content Include="resources\core\Language Arts\corecur.xml" />
+    <Content Include="resources\core\Language Arts\History Social Studies\10.xml" />
+    <Content Include="resources\core\Language Arts\History Social Studies\11.xml" />
+    <Content Include="resources\core\Language Arts\History Social Studies\12.xml" />
+    <Content Include="resources\core\Language Arts\History Social Studies\6.xml" />
+    <Content Include="resources\core\Language Arts\History Social Studies\7.xml" />
+    <Content Include="resources\core\Language Arts\History Social Studies\8.xml" />
+    <Content Include="resources\core\Language Arts\History Social Studies\9.xml" />
+    <Content Include="resources\core\Language Arts\HST Writing\10.xml" />
+    <Content Include="resources\core\Language Arts\HST Writing\11.xml" />
+    <Content Include="resources\core\Language Arts\HST Writing\12.xml" />
+    <Content Include="resources\core\Language Arts\HST Writing\6.xml" />
+    <Content Include="resources\core\Language Arts\HST Writing\7.xml" />
+    <Content Include="resources\core\Language Arts\HST Writing\8.xml" />
+    <Content Include="resources\core\Language Arts\HST Writing\9.xml" />
+    <Content Include="resources\core\Language Arts\Language\1.xml" />
+    <Content Include="resources\core\Language Arts\Language\10.xml" />
+    <Content Include="resources\core\Language Arts\Language\11.xml" />
+    <Content Include="resources\core\Language Arts\Language\12.xml" />
+    <Content Include="resources\core\Language Arts\Language\2.xml" />
+    <Content Include="resources\core\Language Arts\Language\3.xml" />
+    <Content Include="resources\core\Language Arts\Language\4.xml" />
+    <Content Include="resources\core\Language Arts\Language\5.xml" />
+    <Content Include="resources\core\Language Arts\Language\6.xml" />
+    <Content Include="resources\core\Language Arts\Language\7.xml" />
+    <Content Include="resources\core\Language Arts\Language\8.xml" />
+    <Content Include="resources\core\Language Arts\Language\9.xml" />
+    <Content Include="resources\core\Language Arts\Language\K.xml" />
+    <Content Include="resources\core\Language Arts\Reading Foundational Skills\1.xml" />
+    <Content Include="resources\core\Language Arts\Reading Foundational Skills\2.xml" />
+    <Content Include="resources\core\Language Arts\Reading Foundational Skills\3.xml" />
+    <Content Include="resources\core\Language Arts\Reading Foundational Skills\4.xml" />
+    <Content Include="resources\core\Language Arts\Reading Foundational Skills\5.xml" />
+    <Content Include="resources\core\Language Arts\Reading Foundational Skills\K.xml" />
+    <Content Include="resources\core\Language Arts\Reading Information Texts\1.xml" />
+    <Content Include="resources\core\Language Arts\Reading Information Texts\10.xml" />
+    <Content Include="resources\core\Language Arts\Reading Information Texts\11.xml" />
+    <Content Include="resources\core\Language Arts\Reading Information Texts\12.xml" />
+    <Content Include="resources\core\Language Arts\Reading Information Texts\2.xml" />
+    <Content Include="resources\core\Language Arts\Reading Information Texts\3.xml" />
+    <Content Include="resources\core\Language Arts\Reading Information Texts\4.xml" />
+    <Content Include="resources\core\Language Arts\Reading Information Texts\5.xml" />
+    <Content Include="resources\core\Language Arts\Reading Information Texts\6.xml" />
+    <Content Include="resources\core\Language Arts\Reading Information Texts\7.xml" />
+    <Content Include="resources\core\Language Arts\Reading Information Texts\8.xml" />
+    <Content Include="resources\core\Language Arts\Reading Information Texts\9.xml" />
+    <Content Include="resources\core\Language Arts\Reading Information Texts\K.xml" />
+    <Content Include="resources\core\Language Arts\Reading Literature\1.xml" />
+    <Content Include="resources\core\Language Arts\Reading Literature\10.xml" />
+    <Content Include="resources\core\Language Arts\Reading Literature\11.xml" />
+    <Content Include="resources\core\Language Arts\Reading Literature\12.xml" />
+    <Content Include="resources\core\Language Arts\Reading Literature\2.xml" />
+    <Content Include="resources\core\Language Arts\Reading Literature\3.xml" />
+    <Content Include="resources\core\Language Arts\Reading Literature\4.xml" />
+    <Content Include="resources\core\Language Arts\Reading Literature\5.xml" />
+    <Content Include="resources\core\Language Arts\Reading Literature\6.xml" />
+    <Content Include="resources\core\Language Arts\Reading Literature\7.xml" />
+    <Content Include="resources\core\Language Arts\Reading Literature\8.xml" />
+    <Content Include="resources\core\Language Arts\Reading Literature\9.xml" />
+    <Content Include="resources\core\Language Arts\Reading Literature\K.xml" />
+    <Content Include="resources\core\Language Arts\Science Technical\10.xml" />
+    <Content Include="resources\core\Language Arts\Science Technical\11.xml" />
+    <Content Include="resources\core\Language Arts\Science Technical\12.xml" />
+    <Content Include="resources\core\Language Arts\Science Technical\6.xml" />
+    <Content Include="resources\core\Language Arts\Science Technical\7.xml" />
+    <Content Include="resources\core\Language Arts\Science Technical\8.xml" />
+    <Content Include="resources\core\Language Arts\Science Technical\9.xml" />
+    <Content Include="resources\core\Language Arts\Speaking and Listening\1.xml" />
+    <Content Include="resources\core\Language Arts\Speaking and Listening\10.xml" />
+    <Content Include="resources\core\Language Arts\Speaking and Listening\11.xml" />
+    <Content Include="resources\core\Language Arts\Speaking and Listening\12.xml" />
+    <Content Include="resources\core\Language Arts\Speaking and Listening\2.xml" />
+    <Content Include="resources\core\Language Arts\Speaking and Listening\3.xml" />
+    <Content Include="resources\core\Language Arts\Speaking and Listening\4.xml" />
+    <Content Include="resources\core\Language Arts\Speaking and Listening\5.xml" />
+    <Content Include="resources\core\Language Arts\Speaking and Listening\6.xml" />
+    <Content Include="resources\core\Language Arts\Speaking and Listening\7.xml" />
+    <Content Include="resources\core\Language Arts\Speaking and Listening\8.xml" />
+    <Content Include="resources\core\Language Arts\Speaking and Listening\9.xml" />
+    <Content Include="resources\core\Language Arts\Speaking and Listening\K.xml" />
+    <Content Include="resources\core\Language Arts\Writing\1.xml" />
+    <Content Include="resources\core\Language Arts\Writing\10.xml" />
+    <Content Include="resources\core\Language Arts\Writing\11.xml" />
+    <Content Include="resources\core\Language Arts\Writing\12.xml" />
+    <Content Include="resources\core\Language Arts\Writing\2.xml" />
+    <Content Include="resources\core\Language Arts\Writing\3.xml" />
+    <Content Include="resources\core\Language Arts\Writing\4.xml" />
+    <Content Include="resources\core\Language Arts\Writing\5.xml" />
+    <Content Include="resources\core\Language Arts\Writing\6.xml" />
+    <Content Include="resources\core\Language Arts\Writing\7.xml" />
+    <Content Include="resources\core\Language Arts\Writing\8.xml" />
+    <Content Include="resources\core\Language Arts\Writing\9.xml" />
+    <Content Include="resources\core\Language Arts\Writing\K.xml" />
+    <Content Include="resources\core\Mathematics\corecur.xml" />
+    <Content Include="resources\core\Mathematics\Counting and Cardinality\k.xml" />
+    <Content Include="resources\core\Mathematics\Expressions and Equations\6.xml" />
+    <Content Include="resources\core\Mathematics\Expressions and Equations\7.xml" />
+    <Content Include="resources\core\Mathematics\Expressions and Equations\8.xml" />
+    <Content Include="resources\core\Mathematics\Functions\8.xml" />
+    <Content Include="resources\core\Mathematics\Geometry\1.xml" />
+    <Content Include="resources\core\Mathematics\Geometry\2.xml" />
+    <Content Include="resources\core\Mathematics\Geometry\3.xml" />
+    <Content Include="resources\core\Mathematics\Geometry\4.xml" />
+    <Content Include="resources\core\Mathematics\Geometry\5.xml" />
+    <Content Include="resources\core\Mathematics\Geometry\6.xml" />
+    <Content Include="resources\core\Mathematics\Geometry\7.xml" />
+    <Content Include="resources\core\Mathematics\Geometry\8.xml" />
+    <Content Include="resources\core\Mathematics\Geometry\k.xml" />
+    <Content Include="resources\core\Mathematics\Measurement and Data\1.xml" />
+    <Content Include="resources\core\Mathematics\Measurement and Data\2.xml" />
+    <Content Include="resources\core\Mathematics\Measurement and Data\3.xml" />
+    <Content Include="resources\core\Mathematics\Measurement and Data\4.xml" />
+    <Content Include="resources\core\Mathematics\Measurement and Data\5.xml" />
+    <Content Include="resources\core\Mathematics\Measurement and Data\k.xml" />
+    <Content Include="resources\core\Mathematics\Number and Base Ten\1.xml" />
+    <Content Include="resources\core\Mathematics\Number and Base Ten\2.xml" />
+    <Content Include="resources\core\Mathematics\Number and Base Ten\3.xml" />
+    <Content Include="resources\core\Mathematics\Number and Base Ten\4.xml" />
+    <Content Include="resources\core\Mathematics\Number and Base Ten\5.xml" />
+    <Content Include="resources\core\Mathematics\Number and Base Ten\k.xml" />
+    <Content Include="resources\core\Mathematics\Number Fractions\3.xml" />
+    <Content Include="resources\core\Mathematics\Number Fractions\4.xml" />
+    <Content Include="resources\core\Mathematics\Number Fractions\5.xml" />
+    <Content Include="resources\core\Mathematics\Operations and Algebra\1.xml" />
+    <Content Include="resources\core\Mathematics\Operations and Algebra\2.xml" />
+    <Content Include="resources\core\Mathematics\Operations and Algebra\3.xml" />
+    <Content Include="resources\core\Mathematics\Operations and Algebra\4.xml" />
+    <Content Include="resources\core\Mathematics\Operations and Algebra\5.xml" />
+    <Content Include="resources\core\Mathematics\Operations and Algebra\k.xml" />
+    <Content Include="resources\core\Mathematics\Ratios and Proportion\6.xml" />
+    <Content Include="resources\core\Mathematics\Ratios and Proportion\7.xml" />
+    <Content Include="resources\core\Mathematics\Statistics and Probability\6.xml" />
+    <Content Include="resources\core\Mathematics\Statistics and Probability\7.xml" />
+    <Content Include="resources\core\Mathematics\Statistics and Probability\8.xml" />
+    <Content Include="resources\core\Mathematics\The Number System\6.xml" />
+    <Content Include="resources\core\Mathematics\The Number System\7.xml" />
+    <Content Include="resources\core\Mathematics\The Number System\8.xml" />
+    <Content Include="resources\ont\grade_1_Arts.xml" />
+    <Content Include="resources\ont\grade_1_French.xml" />
+    <Content Include="resources\ont\grade_1_Health and PE.xml" />
+    <Content Include="resources\ont\grade_1_Language.xml" />
+    <Content Include="resources\ont\grade_1_Mathematics.xml" />
+    <Content Include="resources\ont\grade_1_Native Languages.xml" />
+    <Content Include="resources\ont\grade_1_Science and Tech.xml" />
+    <Content Include="resources\ont\grade_1_Social Studies.xml" />
+    <Content Include="resources\ont\grade_2_Arts.xml" />
+    <Content Include="resources\ont\grade_2_French.xml" />
+    <Content Include="resources\ont\grade_2_Health and PE.xml" />
+    <Content Include="resources\ont\grade_2_Language.xml" />
+    <Content Include="resources\ont\grade_2_Mathematics.xml" />
+    <Content Include="resources\ont\grade_2_Native Languages.xml" />
+    <Content Include="resources\ont\grade_2_Science and Tech.xml" />
+    <Content Include="resources\ont\grade_2_Social Studies.xml" />
+    <Content Include="resources\ont\grade_3_Arts.xml" />
+    <Content Include="resources\ont\grade_3_French.xml" />
+    <Content Include="resources\ont\grade_3_Health and PE.xml" />
+    <Content Include="resources\ont\grade_3_Language.xml" />
+    <Content Include="resources\ont\grade_3_Mathematics.xml" />
+    <Content Include="resources\ont\grade_3_Native Languages.xml" />
+    <Content Include="resources\ont\grade_3_Science and Tech.xml" />
+    <Content Include="resources\ont\grade_3_Social Studies.xml" />
+    <Content Include="resources\ont\grade_4_Arts.xml" />
+    <Content Include="resources\ont\grade_4_French Core.xml" />
+    <Content Include="resources\ont\grade_4_French Ext.xml" />
+    <Content Include="resources\ont\grade_4_French.xml" />
+    <Content Include="resources\ont\grade_4_Health and PE.xml" />
+    <Content Include="resources\ont\grade_4_Language.xml" />
+    <Content Include="resources\ont\grade_4_Mathematics.xml" />
+    <Content Include="resources\ont\grade_4_Native Languages.xml" />
+    <Content Include="resources\ont\grade_4_Science and Tech.xml" />
+    <Content Include="resources\ont\grade_4_Social Studies.xml" />
+    <Content Include="resources\ont\grade_5_Arts.xml" />
+    <Content Include="resources\ont\grade_5_French Core.xml" />
+    <Content Include="resources\ont\grade_5_French Ext.xml" />
+    <Content Include="resources\ont\grade_5_French.xml" />
+    <Content Include="resources\ont\grade_5_Health and PE.xml" />
+    <Content Include="resources\ont\grade_5_Language.xml" />
+    <Content Include="resources\ont\grade_5_Mathematics.xml" />
+    <Content Include="resources\ont\grade_5_Native Languages.xml" />
+    <Content Include="resources\ont\grade_5_Science and Tech.xml" />
+    <Content Include="resources\ont\grade_5_Social Studies.xml" />
+    <Content Include="resources\ont\grade_6_Arts.xml" />
+    <Content Include="resources\ont\grade_6_French Core.xml" />
+    <Content Include="resources\ont\grade_6_French Ext.xml" />
+    <Content Include="resources\ont\grade_6_French.xml" />
+    <Content Include="resources\ont\grade_6_Health and PE.xml" />
+    <Content Include="resources\ont\grade_6_Language.xml" />
+    <Content Include="resources\ont\grade_6_Mathematics.xml" />
+    <Content Include="resources\ont\grade_6_Native Languages.xml" />
+    <Content Include="resources\ont\grade_6_Science and Tech.xml" />
+    <Content Include="resources\ont\grade_6_Social Studies.xml" />
+    <Content Include="resources\ont\grade_7_Arts.xml" />
+    <Content Include="resources\ont\grade_7_French Core.xml" />
+    <Content Include="resources\ont\grade_7_French Ext.xml" />
+    <Content Include="resources\ont\grade_7_French.xml" />
+    <Content Include="resources\ont\grade_7_Health and PE.xml" />
+    <Content Include="resources\ont\grade_7_Language.xml" />
+    <Content Include="resources\ont\grade_7_Mathematics.xml" />
+    <Content Include="resources\ont\grade_7_Native Languages.xml" />
+    <Content Include="resources\ont\grade_7_Science and Tech.xml" />
+    <Content Include="resources\ont\grade_7_Social Studies.xml" />
+    <Content Include="resources\ont\grade_8_Arts.xml" />
+    <Content Include="resources\ont\grade_8_French Core.xml" />
+    <Content Include="resources\ont\grade_8_French Ext.xml" />
+    <Content Include="resources\ont\grade_8_French.xml" />
+    <Content Include="resources\ont\grade_8_Health and PE.xml" />
+    <Content Include="resources\ont\grade_8_Language.xml" />
+    <Content Include="resources\ont\grade_8_Mathematics.xml" />
+    <Content Include="resources\ont\grade_8_Native Languages.xml" />
+    <Content Include="resources\ont\grade_8_Science and Tech.xml" />
+    <Content Include="resources\ont\grade_8_Social Studies.xml" />
+    <Content Include="resources\ont\grade_k_Arts.xml" />
+    <Content Include="resources\ont\grade_k_Health and PA.xml" />
+    <Content Include="resources\ont\grade_k_Language.xml" />
+    <Content Include="resources\ont\grade_k_Mathematics.xml" />
+    <Content Include="resources\ont\grade_k_Personal and Soc.xml" />
+    <Content Include="resources\ont\grade_k_Science and Tech.xml" />
+    <Content Include="resources\ont\oncur.xml" />
+    <Content Include="sask.aspx" />
+    <Content Include="video.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cc.aspx.designer.vb">
+      <DependentUpon>cc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cc.aspx.vb">
+      <DependentUpon>cc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cursask.aspx.designer.vb">
+      <DependentUpon>cursask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cursask.aspx.vb">
+      <DependentUpon>cursask.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ont.aspx.designer.vb">
+      <DependentUpon>ont.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ont.aspx.vb">
+      <DependentUpon>ont.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sask.aspx.designer.vb">
+      <DependentUpon>sask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sask.aspx.vb">
+      <DependentUpon>sask.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\PublishProfiles\Profile.pubxml" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="resources\sask\apprenticeship_math_education_10.dls" />
+    <Content Include="resources\sask\apprenticeship_math_education_20.dls" />
+    <Content Include="resources\sask\apprenticeship_math_education_30.dls" />
+    <Content Include="resources\sask\arts_education_1.dls" />
+    <Content Include="resources\sask\arts_education_2.dls" />
+    <Content Include="resources\sask\arts_education_3.dls" />
+    <Content Include="resources\sask\arts_education_4.dls" />
+    <Content Include="resources\sask\arts_education_5.dls" />
+    <Content Include="resources\sask\arts_education_6.dls" />
+    <Content Include="resources\sask\arts_education_7.dls" />
+    <Content Include="resources\sask\arts_education_8.dls" />
+    <Content Include="resources\sask\arts_education_9.dls" />
+    <Content Include="resources\sask\arts_education_k.dls" />
+    <Content Include="resources\sask\careers_education_6.dls" />
+    <Content Include="resources\sask\careers_education_7.dls" />
+    <Content Include="resources\sask\careers_education_8.dls" />
+    <Content Include="resources\sask\careers_education_9.dls" />
+    <Content Include="resources\sask\carpentry_education_10.dls" />
+    <Content Include="resources\sask\carpentry_education_20.dls" />
+    <Content Include="resources\sask\carpentry_education_30.dls" />
+    <Content Include="resources\sask\communication_media_education_10.dls" />
+    <Content Include="resources\sask\communication_media_education_20.dls" />
+    <Content Include="resources\sask\communication_media_education_30.dls" />
+    <Content Include="resources\sask\ela_A_education_10.dls" />
+    <Content Include="resources\sask\ela_B_education_10.dls" />
+    <Content Include="resources\sask\ela_education_1.dls" />
+    <Content Include="resources\sask\ela_education_2.dls" />
+    <Content Include="resources\sask\ela_education_20.dls" />
+    <Content Include="resources\sask\ela_education_3.dls" />
+    <Content Include="resources\sask\ela_education_30.dls" />
+    <Content Include="resources\sask\ela_education_4.dls" />
+    <Content Include="resources\sask\ela_education_5.dls" />
+    <Content Include="resources\sask\ela_education_6.dls" />
+    <Content Include="resources\sask\ela_education_7.dls" />
+    <Content Include="resources\sask\ela_education_8.dls" />
+    <Content Include="resources\sask\ela_education_9.dls" />
+    <Content Include="resources\sask\ela_education_k.dls" />
+    <Content Include="resources\sask\french_education_1.dls" />
+    <Content Include="resources\sask\french_education_2.dls" />
+    <Content Include="resources\sask\french_education_3.dls" />
+    <Content Include="resources\sask\french_education_4.dls" />
+    <Content Include="resources\sask\french_education_5.dls" />
+    <Content Include="resources\sask\french_education_6.dls" />
+    <Content Include="resources\sask\french_education_7.dls" />
+    <Content Include="resources\sask\french_education_8.dls" />
+    <Content Include="resources\sask\french_education_9.dls" />
+    <Content Include="resources\sask\graphic_arts_education_20.dls" />
+    <Content Include="resources\sask\graphic_arts_education_30.dls" />
+    <Content Include="resources\sask\health_education_1.dls" />
+    <Content Include="resources\sask\health_education_2.dls" />
+    <Content Include="resources\sask\health_education_3.dls" />
+    <Content Include="resources\sask\health_education_4.dls" />
+    <Content Include="resources\sask\health_education_5.dls" />
+    <Content Include="resources\sask\health_education_6.dls" />
+    <Content Include="resources\sask\health_education_7.dls" />
+    <Content Include="resources\sask\health_education_8.dls" />
+    <Content Include="resources\sask\health_education_9.dls" />
+    <Content Include="resources\sask\health_education_k.dls" />
+    <Content Include="resources\sask\jazz_education_10.dls" />
+    <Content Include="resources\sask\jazz_education_20.dls" />
+    <Content Include="resources\sask\jazz_education_30.dls" />
+    <Content Include="resources\sask\math_education_1.dls" />
+    <Content Include="resources\sask\math_education_2.dls" />
+    <Content Include="resources\sask\math_education_20.dls" />
+    <Content Include="resources\sask\math_education_3.dls" />
+    <Content Include="resources\sask\math_education_30.dls" />
+    <Content Include="resources\sask\math_education_4.dls" />
+    <Content Include="resources\sask\math_education_5.dls" />
+    <Content Include="resources\sask\math_education_6.dls" />
+    <Content Include="resources\sask\math_education_7.dls" />
+    <Content Include="resources\sask\math_education_8.dls" />
+    <Content Include="resources\sask\math_education_9.dls" />
+    <Content Include="resources\sask\math_education_k.dls" />
+    <Content Include="resources\sask\photography_education_10.dls" />
+    <Content Include="resources\sask\photography_education_20.dls" />
+    <Content Include="resources\sask\photography_education_30.dls" />
+    <Content Include="resources\sask\phys.ed_education_1.dls" />
+    <Content Include="resources\sask\phys.ed_education_2.dls" />
+    <Content Include="resources\sask\phys.ed_education_3.dls" />
+    <Content Include="resources\sask\phys.ed_education_4.dls" />
+    <Content Include="resources\sask\phys.ed_education_5.dls" />
+    <Content Include="resources\sask\phys.ed_education_6.dls" />
+    <Content Include="resources\sask\phys.ed_education_7.dls" />
+    <Content Include="resources\sask\phys.ed_education_8.dls" />
+    <Content Include="resources\sask\phys.ed_education_9.dls" />
+    <Content Include="resources\sask\phys.ed_education_k.dls" />
+    <Content Include="resources\sask\pre-calculus_education_10.dls" />
+    <Content Include="resources\sask\pre-calculus_education_20.dls" />
+    <Content Include="resources\sask\pre-calculus_education_30.dls" />
+    <Content Include="resources\sask\saskcur.dls" />
+    <Content Include="resources\sask\science_education_1.dls" />
+    <Content Include="resources\sask\science_education_2.dls" />
+    <Content Include="resources\sask\science_education_3.dls" />
+    <Content Include="resources\sask\science_education_4.dls" />
+    <Content Include="resources\sask\science_education_5.dls" />
+    <Content Include="resources\sask\science_education_6.dls" />
+    <Content Include="resources\sask\science_education_7.dls" />
+    <Content Include="resources\sask\science_education_8.dls" />
+    <Content Include="resources\sask\science_education_9.dls" />
+    <Content Include="resources\sask\science_education_k.dls" />
+    <Content Include="resources\sask\social studies_education_1.dls" />
+    <Content Include="resources\sask\social studies_education_2.dls" />
+    <Content Include="resources\sask\social studies_education_3.dls" />
+    <Content Include="resources\sask\social studies_education_4.dls" />
+    <Content Include="resources\sask\social studies_education_5.dls" />
+    <Content Include="resources\sask\social studies_education_6.dls" />
+    <Content Include="resources\sask\social studies_education_7.dls" />
+    <Content Include="resources\sask\social studies_education_8.dls" />
+    <Content Include="resources\sask\social studies_education_9.dls" />
+    <Content Include="resources\sask\social studies_education_k.dls" />
+    <Content Include="resources\sask\welding_a_education_30.dls" />
+    <Content Include="resources\sask\welding_b_education_30.dls" />
+    <Content Include="resources\sask\welding_education_10.dls" />
+    <Content Include="resources\sask\welding_education_20.dls" />
+    <Content Include="resources\sask\wellness_education_10.dls" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60560</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53948/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

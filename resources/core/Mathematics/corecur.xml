@@ -1,0 +1,91 @@
+<curriculum>
+	<grade>
+		<grade_text>K</grade_text>
+		<subjects id="K">Counting and Cardinality</subjects>
+		<subjects id="K">Operations and Algebra</subjects>
+		<subjects id="K">Number and Base Ten</subjects>
+		<subjects id="K">Measurement and Data</subjects>
+		<subjects id="K">Geometry</subjects>
+	</grade>
+	<grade>
+		<grade_text>1</grade_text>
+		<subjects id="1">Operations and Algebra</subjects>
+		<subjects id="1">Number and Base Ten</subjects>
+		<subjects id="1">Measurement and Data</subjects>
+		<subjects id="1">Geometry</subjects>
+	</grade>
+	<grade>
+		<grade_text>2</grade_text>
+		<subjects id="2">Operations and Algebra</subjects>
+		<subjects id="2">Number and Base Ten</subjects>
+		<subjects id="2">Measurement and Data</subjects>
+		<subjects id="2">Geometry</subjects>
+	</grade>
+	<grade>
+		<grade_text>3</grade_text>
+		<subjects id="3">Operations and Algebra</subjects>
+		<subjects id="3">Number and Base Ten</subjects>
+		<subjects id="3">Number Fractions</subjects>
+		<subjects id="3">Measurement and Data</subjects>
+		<subjects id="3">Geometry</subjects>
+		
+	</grade>
+	<grade>
+		<grade_text>4</grade_text>
+		<subjects id="4">Operations and Algebra</subjects>
+		<subjects id="4">Number and Base Ten</subjects>
+		<subjects id="4">Number Fractions</subjects>
+		<subjects id="4">Measurement and Data</subjects>
+		<subjects id="4">Geometry</subjects>
+	</grade>
+	<grade>
+		<grade_text>5</grade_text>
+		<subjects id="5">Operations and Algebra</subjects>
+		<subjects id="5">Number and Base Ten</subjects>
+		<subjects id="5">Number Fractions</subjects>
+		<subjects id="5">Measurement and Data</subjects>
+		<subjects id="5">Geometry</subjects>
+	</grade>
+	<grade>
+		<grade_text>6</grade_text>
+		<subjects id="6">Ratios and Proportion</subjects>
+		<subjects id="6">The Number System</subjects>
+		<subjects id="6">Expressions and Equations</subjects>
+		<subjects id="6">Statistics and Probability</subjects>
+		<subjects id="6">Geometry</subjects>
+
+	</grade>
+	<grade>
+		<grade_text>7</grade_text>
+		<subjects id="7">Ratios and Proportion</subjects>
+		<subjects id="7">The Number System</subjects>
+		<subjects id="7">Expressions and Equations</subjects>
+		<subjects id="7">Statistics and Probability</subjects>
+		<subjects id="7">Geometry</subjects>
+	</grade>
+	<grade>
+		<grade_text>8</grade_text>
+		<subjects id="8">The Number System</subjects>
+		<subjects id="8">Expressions and Equations</subjects>
+    <subjects id="8">Functions</subjects>
+		<subjects id="8">Geometry</subjects>
+    <subjects id="8">Statistics and Probability</subjects>
+	</grade>
+	<grade>
+		<grade_text>9</grade_text>
+		<subjects id="9">Select HS Standards</subjects>
+	</grade>
+	<grade>
+		<grade_text>10</grade_text>
+		<subjects id="10">Select HS Standards</subjects>
+	</grade>
+	<grade>
+		<grade_text>11</grade_text>
+		<subjects id="11">Select HS Standards</subjects>
+	</grade>
+	<grade>
+		<grade_text>12</grade_text>
+		<subjects id="12">Select HS Standards</subjects>
+	</grade>
+	
+</curriculum>

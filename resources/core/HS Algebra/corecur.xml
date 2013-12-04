@@ -1,0 +1,9 @@
+<curriculum>
+	<grade>
+		<grade_text>HS</grade_text>
+    <subjects id="HS">Arithmetic</subjects>
+    <subjects id="HS">Creating Equations</subjects>
+    <subjects id="HS">Reasoning with Equations</subjects>
+    <subjects id="HS">Seeing Structure</subjects>
+	</grade>
+</curriculum>

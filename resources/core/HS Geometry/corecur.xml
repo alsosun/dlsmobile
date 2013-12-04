@@ -1,0 +1,11 @@
+<curriculum>
+	<grade>
+		<grade_text>HS</grade_text>
+    <subjects id="HS">Circles</subjects>
+    <subjects id="HS">Congruence</subjects>
+    <subjects id="HS">Expressing Geometric Prop</subjects>
+    <subjects id="HS">Geometric Measurement</subjects>
+	<subjects id="HS">Modeling with Geometry</subjects>
+    <subjects id="HS">Similarity R Triangles Trig</subjects>
+	</grade>
+</curriculum>

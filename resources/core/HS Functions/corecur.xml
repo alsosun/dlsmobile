@@ -1,0 +1,9 @@
+<curriculum>
+	<grade>
+		<grade_text>HS</grade_text>
+    <subjects id="HS">Building Functions</subjects>
+    <subjects id="HS">Interpreting Functions</subjects>
+    <subjects id="HS">Linear Quadratic Exponential</subjects>
+    <subjects id="HS">Trigonometric Functions</subjects>
+	</grade>
+</curriculum>

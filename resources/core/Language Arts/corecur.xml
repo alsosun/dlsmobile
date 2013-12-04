@@ -1,0 +1,133 @@
+<curriculum>
+	<grade>
+		<grade_text>K</grade_text>
+		<subjects id="K">Language</subjects>
+		<subjects id="K">Reading Foundational Skills</subjects>
+		<subjects id="K">Reading Information Texts</subjects>
+		<subjects id="K">Reading Literature</subjects>
+		<subjects id="K">Speaking and Listening</subjects>
+		<subjects id="K">Writing</subjects>
+	</grade>
+	<grade>
+		<grade_text>1</grade_text>
+		<subjects id="1">Language</subjects>
+		<subjects id="1">Reading Foundational Skills</subjects>
+		<subjects id="1">Reading Information Texts</subjects>
+		<subjects id="1">Reading Literature</subjects>
+		<subjects id="1">Speaking and Listening</subjects>
+		<subjects id="1">Writing</subjects>
+	</grade>
+	<grade>
+		<grade_text>2</grade_text>
+		<subjects id="2">Language</subjects>
+		<subjects id="2">Reading Foundational Skills</subjects>
+		<subjects id="2">Reading Information Texts</subjects>
+		<subjects id="2">Reading Literature</subjects>
+		<subjects id="2">Speaking and Listening</subjects>
+		<subjects id="2">Writing</subjects>
+	</grade>
+	<grade>
+		<grade_text>3</grade_text>
+		<subjects id="3">Language</subjects>
+		<subjects id="3">Reading Foundational Skills</subjects>
+		<subjects id="3">Reading Information Texts</subjects>
+		<subjects id="3">Reading Literature</subjects>
+		<subjects id="3">Speaking and Listening</subjects>
+		<subjects id="3">Writing</subjects>
+	</grade>
+	<grade>
+		<grade_text>4</grade_text>
+		<subjects id="4">Language</subjects>
+		<subjects id="4">Reading Foundational Skills</subjects>
+		<subjects id="4">Reading Information Texts</subjects>
+		<subjects id="4">Reading Literature</subjects>
+		<subjects id="4">Speaking and Listening</subjects>
+		<subjects id="4">Writing</subjects>
+	</grade>
+	<grade>
+		<grade_text>5</grade_text>
+		<subjects id="5">Language</subjects>
+		<subjects id="5">Reading Foundational Skills</subjects>
+		<subjects id="5">Reading Information Texts</subjects>
+		<subjects id="5">Reading Literature</subjects>
+		<subjects id="5">Speaking and Listening</subjects>
+		<subjects id="5">Writing</subjects>
+	</grade>
+	<grade>
+		<grade_text>6</grade_text>
+		<subjects id="6">Language</subjects>
+		<subjects id="6">Reading Information Texts</subjects>
+		<subjects id="6">Reading Literature</subjects>
+		<subjects id="6">Speaking and Listening</subjects>
+		<subjects id="6">Writing</subjects>
+		<subjects id="6">History Social Studies</subjects>
+		<subjects id="6">Science Technical</subjects>
+		<subjects id="6">HST Writing</subjects>
+	</grade>
+	<grade>
+		<grade_text>7</grade_text>
+		<subjects id="7">Language</subjects>
+		<subjects id="7">Reading Information Texts</subjects>
+		<subjects id="7">Reading Literature</subjects>
+		<subjects id="7">Speaking and Listening</subjects>
+		<subjects id="7">Writing</subjects>
+		<subjects id="7">History Social Studies</subjects>
+		<subjects id="7">Science Technical</subjects>
+		<subjects id="7">HST Writing</subjects>
+	</grade>
+	<grade>
+		<grade_text>8</grade_text>
+		<subjects id="8">Language</subjects>
+		<subjects id="8">Reading Information Texts</subjects>
+		<subjects id="8">Reading Literature</subjects>
+		<subjects id="8">Speaking and Listening</subjects>
+		<subjects id="8">Writing</subjects>
+		<subjects id="8">History Social Studies</subjects>
+		<subjects id="8">Science Technical</subjects>
+		<subjects id="8">HST Writing</subjects>
+	</grade>
+	<grade>
+		<grade_text>9</grade_text>
+		<subjects id="9">Language</subjects>
+		<subjects id="9">Reading Information Texts</subjects>
+		<subjects id="9">Reading Literature</subjects>
+		<subjects id="9">Speaking and Listening</subjects>
+		<subjects id="9">Writing</subjects>
+		<subjects id="9">History Social Studies</subjects>
+		<subjects id="9">Science Technical</subjects>
+		<subjects id="9">HST Writing</subjects>
+	</grade>
+	<grade>
+		<grade_text>10</grade_text>
+		<subjects id="10">Language</subjects>
+		<subjects id="10">Reading Information Texts</subjects>
+		<subjects id="10">Reading Literature</subjects>
+		<subjects id="10">Speaking and Listening</subjects>
+		<subjects id="10">Writing</subjects>
+		<subjects id="10">History Social Studies</subjects>
+		<subjects id="10">Science Technical</subjects>
+		<subjects id="10">HST Writing</subjects>
+	</grade>
+	<grade>
+		<grade_text>11</grade_text>
+		<subjects id="11">Language</subjects>
+		<subjects id="11">Reading Information Texts</subjects>
+		<subjects id="11">Reading Literature</subjects>
+		<subjects id="11">Speaking and Listening</subjects>
+		<subjects id="11">Writing</subjects>
+		<subjects id="11">History Social Studies</subjects>
+		<subjects id="11">Science Technical</subjects>
+		<subjects id="11">HST Writing</subjects>
+	</grade>
+	<grade>
+		<grade_text>12</grade_text>
+		<subjects id="12">Language</subjects>
+		<subjects id="12">Reading Information Texts</subjects>
+		<subjects id="12">Reading Literature</subjects>
+		<subjects id="12">Speaking and Listening</subjects>
+		<subjects id="12">Writing</subjects>
+		<subjects id="12">History Social Studies</subjects>
+		<subjects id="12">Science Technical</subjects>
+		<subjects id="12">HST Writing</subjects>
+	</grade>
+</curriculum>

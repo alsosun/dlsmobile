@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+	<title>Blog Post 3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=0.85">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+	<link rel="stylesheet" href="assets/css/style.css" />
+	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="assets/css/owl.theme.css">
+	<link rel="stylesheet" href="assets/css/photoswipe.css">
+	<script type="text/javascript" src="assets/js/klass.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+	<script type="text/javascript" src="assets/js/jstorage.js"></script>
+	<script type="text/javascript" src="assets/js/retina.js"></script>
+	<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="assets/js/code.photoswipe.jquery-3.0.5.min.js"></script>
+	<script src="assets/js/custom.js"></script>
+</head>
+<body>
+<div data-role="page">
+	<div data-role="panel" data-position="left" data-theme="a" data-display="push" id="left_panel">
+		<ul data-role="listview" data-inset="false" data-theme="a">
+			<li><div style="text-align: center;"><img src="assets/img/logo.png" alt="Logo"></div></li>
+			<li><a data-transition="slide" href="index.html"><img src="assets/img/menu-icons/home.png" alt="Home" class="ui-li-icon">Home</a></li>
+			<li id="menu_news" class="countable"><a data-transition="slide" data-count="3" href="news.html"><img src="assets/img/menu-icons/news.png" alt="News" class="ui-li-icon">News<span class="ui-li-count hidden accent-color"></span></a></li>
+			<li id="menu_recipes" class="countable"><a data-transition="slide" data-count="2" href="recipes.html"><img src="assets/img/menu-icons/star.png" alt="Recipes" class="ui-li-icon">Recipes<span class="ui-li-count hidden accent-color"></span></a></li>
+			<li id="menu_blog" class="countable"><a data-transition="slide" data-count="3" href="blog.html"><img src="assets/img/menu-icons/blog.png" alt="Blog" class="ui-li-icon">Blog<span class="ui-li-count hidden accent-color"></span></a></li>
+			<li id="menu_gallery" class="countable"><a data-transition="slide" data-count="0" href="gallery.html"><img src="assets/img/menu-icons/gallery.png" alt="Gallery" class="ui-li-icon">Gallery<span class="ui-li-count hidden accent-color"></span></a></li>
+			<li id="menu_video" class="countable"><a data-transition="slide" data-count="2" href="video.html"><img src="assets/img/menu-icons/video.png" alt="Video" class="ui-li-icon">Video<span class="ui-li-count hidden accent-color"></span></a></li>
+			<li><a data-transition="slide" href="information.html"><img src="assets/img/menu-icons/information.png" alt="Information" class="ui-li-icon">Information</a></li>
+			<li><a data-transition="slide" href="typography.html"><img src="assets/img/menu-icons/typography.png" alt="Typorgaphy" class="ui-li-icon">Typography</a></li>
+			<li><a data-transition="slide" href="form-elements.html"><img src="assets/img/menu-icons/typography.png" alt="Form Elements" class="ui-li-icon">Form Elements</a></li>
+		</ul>
+		<div style="position: relative; top: 15px;">
+			<p>Socialize</p>
+			<a href="#"><img src="assets/img/panel/skype.png" alt="Skype"></a>
+			<a href="#"><img src="assets/img/panel/twitter.png" alt="Twitter"></a>
+			<a href="#"><img src="assets/img/panel/vimeo.png" alt="Vimeo"></a>
+			<a href="#"><img src="assets/img/panel/facebook.png" alt="Facebook"></a>
+			<a href="#"><img src="assets/img/panel/google.png" alt="Google+"></a>
+			<a href="#"><img src="assets/img/panel/youtube.png" alt="YouTube"></a>
+		</div>
+	</div>
+	<div data-role="panel" data-theme="a" data-position="right" data-display="push" id="right_panel">
+		<div style="text-align: center;">
+			<h4 style="margin-top: 0px;">Share this page on:</h4>
+			<div class="panel-social-wrap">
+				<a class="facebook_share_link" title="Share link on Facebook" target="_blank" href="#" rel="nofollow">
+					<div class="panel-social panel-social-twitter accent-color">
+						<img src="assets/img/facebook.png" alt="Facebook">
+					</div>
+				</a>
+				<div class="panel-social-counter facebook_number"></div>
+			</div>
+			<div class="panel-social-wrap">
+				<a class="twitter_share_link" title="Share link on Twitter" target="_blank" href="#" rel="nofollow">
+					<div class="panel-social panel-social-facebook accent-color">
+						<img src="assets/img/twitter.png" alt="Twitter">
+					</div>
+				</a>
+				<div class="panel-social-counter twitter_number"></div>
+			</div>
+			<div class="panel-social-wrap">
+				<a class="google_share_link" title="Share link on Google+" target="_blank" href="#" rel="nofollow">
+					<div class="panel-social panel-social-google accent-color">
+						<img src="assets/img/google.png" alt="Google+">
+					</div>
+				</a>
+				<div class="panel-social-counter google_number"></div>
+			</div>
+		</div>
+	</div>
+	<div id="header" data-role="header" data-position="fixed" data-theme="c">
+		<div class="header_wrapper">
+			<a style="border-left: none;" class="header_button" href="#left_panel" data-inline="true" data-role="button" data-corners="false" data-theme="c">
+				<img class="header-btn-image" style="width: 100%; height: 100%;" src="assets/img/menu.png" alt="Menu">
+				<span class="menu-btn-background"></span>
+				<span class="counter-header hidden accent-color" style="color: #ffffff;"></span>
+			</a>
+			<span class="page_title">Blog Post 3</span>
+			<a style="float: right; border: none;" class="header_button" href="#" data-inline="true" data-rel="back" data-role="button" data-corners="false" data-theme="c">
+				<img style="width: 100%; height: 100%;" src="assets/img/back.png" alt="Back">
+				<span class="btn-background"></span>
+			</a>
+			<a style="float: right;" class="header_button" href="#right_panel" data-inline="true" data-role="button" data-corners="false" data-theme="c">
+				<img style="width: 100%; height: 100%;" src="assets/img/share.png" alt="Share">
+				<span class="btn-background share-btn-background"></span>
+			</a>
+			<div style="clear: both"></div>
+		</div>
+	</div><!-- /header -->
+	<div data-role="content">
+		<div class="container">
+			<article class="blog-article">
+				<div class="single-blog-article-meta">
+					<h3 class="single-blog-article-title">Blog Post 3</h3>
+					<div class="date">
+						<img src="assets/img/blog-article-date.png" alt="Date">
+						<span>19, Apr 2013</span>
+					</div>
+				</div>
+				<div style="clear: both;" class="blog-featured-image blog-image-left">
+					<div style="display: inline-block; max-width: 100%;">
+						<img src="assets/img/content-images/blog-article-3.jpg" alt="Blog Image 1">
+					</div>
+				</div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ipsum leo, iaculis in neque quis, varius semper est. Duis arcu neque, tristique sit amet commodo non, tincidunt in lorem. Maecenas eleifend ornare metus, vel ornare nisi. In hac habitasse platea dictumst. Fusce gravida metus vel nibh aliquam consequat. Praesent rutrum vulputate commodo. Sed accumsan elementum fermentum. Phasellus eget nunc posuere, facilisis orci a, porttitor lectus. Vestibulum tempor elit nec leo blandit consequat. Quisque dictum nunc et urna lacinia elementum. Aenean placerat ultrices malesuada. Quisque convallis justo blandit, auctor justo eget, pharetra ipsum. Duis vehicula purus ac faucibus sollicitudin.</p>
+				<p>Maecenas non odio diam. Proin mollis iaculis purus, eu imperdiet nisl pretium vitae. Aliquam interdum velit lectus, non vehicula massa porttitor sit amet. Cras eget venenatis leo. Curabitur mollis eros orci, ac gravida lacus tincidunt quis. Nam semper vulputate justo, ut interdum justo posuere sed. Donec sed sapien id odio molestie dapibus.</p>
+				<div class="clear"></div>
+				<hr style="background: #bebebe; margin: 30px 0;">
+				<div id="disqus_thread" class="disqus-wrap disqus-active"></div>
+				<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+				<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+				<hr style="background: #bebebe; margin: 30px 0;">
+			</article>
+		</div>
+				<div>
+					<h6 class="footer-text">Copyright 2013. All rights reserved</h6>
+				</div>
+			</div><!-- /content -->
+		</div><!-- /page -->
+	</body>
+</html>

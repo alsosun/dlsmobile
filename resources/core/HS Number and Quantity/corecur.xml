@@ -1,0 +1,10 @@
+<curriculum>
+	<grade>
+		<grade_text>HS</grade_text>
+    <subjects id="HS">Real Number System</subjects>
+    <subjects id="HS">Complex Number System</subjects>
+    <subjects id="HS">Quantities</subjects>
+    <subjects id="HS">Vector and Matrix</subjects>
+
+	</grade>
+</curriculum>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+	<title>Curriculum</title>
+		<meta name="viewport" content="width=device-width, initial-scale=0.85">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+	<link rel="stylesheet" href="assets/css/style.css" />
+	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="assets/css/owl.theme.css">
+	<link rel="stylesheet" href="assets/css/photoswipe.css">
+	<script type="text/javascript" src="assets/js/klass.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+	<script type="text/javascript" src="assets/js/jstorage.js"></script>
+	<script type="text/javascript" src="assets/js/retina.js"></script>
+	<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="assets/js/code.photoswipe.jquery-3.0.5.min.js"></script>
+	<script src="assets/js/custom.js"></script>
+</head>
+<body>
+<div data-role="page">
+	<div data-role="panel" data-position="left" data-theme="a" data-display="push" id="left_panel">
+		<ul data-role="listview" data-inset="false" data-theme="a">
+			<li><div style="text-align: center;"><img src="assets/img/logo.png" alt="Logo"></div></li>
+			<li><a data-transition="slide" href="index.html"><img src="assets/img/menu-icons/home.png" alt="Home" class="ui-li-icon">Home</a></li>
+			<li id="menu_news" class="countable"><a data-transition="slide" data-count="3" href="cur.html"><img src="assets/img/menu-icons/news.png" alt="Curriculum" class="ui-li-icon">Curriculum<span class="ui-li-count hidden accent-color"></span></a></li>
+			<li id="menu_recipes" class="countable"><a data-transition="slide" data-count="2" href="planners.html"><img src="assets/img/menu-icons/star.png" alt="Planners" class="ui-li-icon">Planners<span class="ui-li-count hidden accent-color"></span></a></li>
+			<li id="menu_gallery" class="countable"><a data-transition="slide" data-count="0" href="features.html"><img src="assets/img/menu-icons/information.png" alt="Features" class="ui-li-icon">Features<span class="ui-li-count hidden accent-color"></span></a></li>
+            <li id="menu_video" class="countable"><a data-transition="slide" data-count="2" href="video.html"><img src="assets/img/menu-icons/video.png" alt="Video" class="ui-li-icon">Tutorials<span class="ui-li-count hidden accent-color"></span></a></li>
+			<li id="menu_blog" class="countable"><a data-transition="slide" data-count="3" href="blog.html"><img src="assets/img/menu-icons/blog.png" alt="Blog" class="ui-li-icon">News<span class="ui-li-count hidden accent-color"></span></a></li>
+            <li><a data-transition="slide" href="information.html"><img src="assets/img/menu-icons/information.png" alt="Information" class="ui-li-icon">Contact</a></li>
+		</ul>
+		<div style="position: relative; top: 15px;">
+			<p>Socialize</p>
+			<a href="https://twitter.com/DLS_Canada"><img src="assets/img/panel/twitter.png" alt="Twitter"></a>
+			<a href="https://www.facebook.com/Digitallearnersolutions"><img src="assets/img/panel/facebook.png" alt="Facebook"></a>
+			<a href="https://plus.google.com/101568684619478372786"><img src="assets/img/panel/google.png" alt="Google+"></a>
+			<a href="https://www.youtube.com/user/DLSolutions2013"><img src="assets/img/panel/youtube.png" alt="YouTube"></a>
+		</div>
+	</div>
+	<div data-role="panel" data-theme="a" data-position="right" data-display="push" id="right_panel">
+		<div style="text-align: center;">
+			<h4 style="margin-top: 0px;">Share this page on:</h4>
+			<div class="panel-social-wrap">
+				<a class="facebook_share_link" title="Share link on Facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://www.digitallearnersolutions.com/m/&p[images][0]=&p[title]=Unit%20and%20Rubric%20Planner&p[summary]=" rel="nofollow">
+					<div class="panel-social panel-social-twitter accent-color">
+						<img src="assets/img/facebook.png" alt="Facebook">
+					</div>
+				</a>
+				<div class="panel-social-counter facebook_number"></div>
+			</div>
+			<div class="panel-social-wrap">
+				<a class="twitter_share_link" title="Share link on Twitter" target="_blank" href="http://twitter.com/home?status=All%20teachers%20need%20to%20see%20this!%20http://www.digitallearnersolutions.com/m/%20" rel="nofollow">
+					<div class="panel-social panel-social-facebook accent-color">
+						<img src="assets/img/twitter.png" alt="Twitter">
+					</div>
+				</a>
+				<div class="panel-social-counter twitter_number"></div>
+			</div>
+			<div class="panel-social-wrap">
+				<a class="google_share_link" title="Share link on Google+" target="_blank" href="https://plus.google.com/share?url=http://www.digitallearnersolutions.com/m/%20" rel="nofollow">
+					<div class="panel-social panel-social-google accent-color">
+						<img src="assets/img/google.png" alt="Google+">
+					</div>
+				</a>
+				<div class="panel-social-counter google_number"></div>
+			</div>
+		</div>
+	</div>
+	<div id="header" data-role="header" data-position="fixed" data-theme="c">
+		<div class="header_wrapper">
+			<a style="border-left: none;" class="header_button" href="#left_panel" data-inline="true" data-role="button" data-corners="false" data-theme="c">
+				<img class="header-btn-image" style="width: 100%; height: 100%;" src="assets/img/menu.png" alt="Menu">
+				<span class="menu-btn-background"></span>
+				<span class="counter-header hidden accent-color" style="color: #ffffff;"></span>
+			</a>
+			<span class="page_title">Curriculum</span>
+			<a style="float: right; border: none;" class="header_button" href="#" data-inline="true" data-rel="back" data-role="button" data-corners="false" data-theme="c">
+				<img style="width: 100%; height: 100%;" src="assets/img/back.png" alt="Back">
+				<span class="btn-background"></span>
+			</a>
+			<a style="float: right;" class="header_button" href="#right_panel" data-inline="true" data-role="button" data-corners="false" data-theme="c">
+				<img style="width: 100%; height: 100%;" src="assets/img/share.png" alt="Share">
+				<span class="btn-background share-btn-background"></span>
+			</a>
+			<div style="clear: both"></div>
+		</div>
+	</div><!-- /header -->
+	<div data-role="content">
+		<div class="container" style="padding: 0px;">
+			<ul id="news_list" data-role="listview" data-inset="false">
+				<li><div class="news-image-wrap">
+							<div class="news-single-image-container">
+								<div class="accent-color news-image-divider"></div>
+								<a href="cursask.aspx" rel="external">
+									<img src="assets/img/content-images/1f.jpg" alt="News 1">
+									<div class="news-icon-wrapper">
+										<svg class="news-icon news-single svg-accent" viewBox="0 0 500 260" preserveAspectRatio="xMinYMin meet">
+											<rect width="500" height="280" clip-path="url(#news-path)" />
+										</svg>
+										<img class="news-arrow" src="assets/img/news-arrow.png" alt="Arrow">
+									</div>
+								</a>
+								<div class="news-single-title">
+									<span class="news-single-title-text">Browse Saskatchewan Outcomes</span>
+								</div>
+							</div>
+					</div>
+				</li>
+				<li><div class="news-image-wrap">
+							<div class="news-single-image-container">
+								<div class="accent-color news-image-divider"></div>
+								<a href="ont.aspx" rel="external">
+									<img src="assets/img/content-images/2f.jpg" alt="News 2">
+									<div class="news-icon-wrapper">
+										<svg class="news-icon news-single svg-accent" viewBox="0 0 500 260" preserveAspectRatio="xMinYMin meet">
+											<rect width="500" height="280" clip-path="url(#news-path)" />
+										</svg>
+										<img class="news-arrow" src="assets/img/news-arrow.png" alt="Arrow">
+									</div>
+								</a>
+								<div class="news-single-title">
+									<span class="news-single-title-text">Browse Ontario Overall Expectations</span>
+								</div>
+							</div>
+					</div>
+				</li>
+				<li><div class="news-image-wrap">
+							<div class="news-single-image-container">
+								<div class="accent-color news-image-divider"></div>
+								<a href="cc.aspx" rel="external">
+									<img src="assets/img/content-images/3f.jpg" alt="News 3">
+									<div class="news-icon-wrapper">
+										<svg class="news-icon news-single svg-accent" viewBox="0 0 500 260" preserveAspectRatio="xMinYMin meet">
+											<rect width="500" height="280" clip-path="url(#news-path)" />
+										</svg>
+										<img class="news-arrow" src="assets/img/news-arrow.png" alt="Arrow">
+									</div>
+								</a>
+								<div class="news-single-title">
+									<span class="news-single-title-text">Common Core State Standards</span>
+								</div>
+							</div>
+					</div>
+				</li>
+                <li><div class="news-image-wrap">
+							<div class="news-single-image-container">
+								<div class="accent-color news-image-divider"></div>
+								<a href="planners.html">
+									<img src="assets/img/content-images/4f.jpg" alt="News 2">
+									<div class="news-icon-wrapper">
+										<svg class="news-icon news-single svg-accent" viewBox="0 0 500 260" preserveAspectRatio="xMinYMin meet">
+											<rect width="500" height="280" clip-path="url(#news-path)" />
+										</svg>
+										<img class="news-arrow" src="assets/img/news-arrow.png" alt="Arrow">
+									</div>
+								</a>
+								<div class="news-single-title">
+									<span class="news-single-title-text">General / Custom Curriculum</span>
+								</div>
+							</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- Do not remove this SVG shape below -->
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="height: 0px; display: block;">
+			<defs>
+				<clipPath id="news-path">
+					<path fill-rule="evenodd" clip-rule="evenodd" fill="#666666" d="M614.557,0c0,81.931,0,170.339,0,252.279
+		c-77.667-1.666-273,7.001-344.148-11.379C193.505,221.033,161.631,137.386,117.99,78.661C99.345,53.564,64.266,22.639,34.419,9.832
+		C24.245,5.466,9.182,5.029,0,0C204.833,0,409.725,0,614.557,0z"/>
+				</clipPath>
+			</defs>
+		</svg>
+		<!-- Do not remove <svg> above -->
+				<div>
+					<h6 class="footer-text">DLS Copyright 2013. All rights reserved</h6>
+				</div>
+			</div><!-- /content -->
+		</div><!-- /page -->
+	</body>
+</html>
