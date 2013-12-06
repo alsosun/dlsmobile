@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="assets/js/loadxmlout.js"></script>
+    <script type="text/javascript" src="assets/js/loadxmldoc.js"></script>
+    <script type="text/javascript"> 
+        function popsub() {
+            var ddlist = new Array()
+            
+            var gr = document.getElementById("gradedd").options[gradedd.selectedIndex].value;
+            var dropdown = document.getElementById("subdd");
+            dropdown.innerHTML = "";
+            dropdown[dropdown.length] = new Option("select subject", "select subject");
+            xml = loadXMLDoc("resources/sask/xml/saskcur.xml");
+            path = "/curriculum/grade/subjects[@id='" + gr + "']"
+            // code for IE
+            if (window.ActiveXObject) {
+                var nodes = xml.selectNodes(path);
+
+                for (i = 0; i < nodes.length; i++) {
+                    ddlist[0] = nodes[i].childNodes[0].nodeValue;
+                    dropdown[dropdown.length] = new Option(ddlist[i], ddlist[i]);
+                    
+                }
+            }
+                // code for Mozilla, Firefox, Opera, etc.
+             else if (document.implementation && document.implementation.createDocument) {
+                var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+                var result = nodes.iterateNext();
+
+                while (result) {
+                    //document.getElementById('outtable').innerHTML = result.childNodes[0].nodeValue 
+                    //document.write(result.childNodes[0].nodeValue);
+                    //document.write("<br>");
+                    var sub = result.childNodes[0].nodeValue
+                    dropdown[dropdown.length] = new Option(sub, sub);
+                    result = nodes.iterateNext();
+                }
+            }
+            
+        }
+    </script>
+<script>
+
+    function popsgr() {
+        var gr = gradedd.options[gradedd.selectedIndex].value
+        
+        popgrade(gr)
+    }
+</script>
+<script>
+
+    function popout()
+{
+        var gr = gradedd.options[gradedd.selectedIndex].value
+        var sb = subdd.options[subdd.selectedIndex].value
+        loadXMLout("resources/sask/xml/" + sb + "_education_" + gr + ".xml")
+}
+</script>
+</head>
+<body>
+
+    <div><form>
+    Select Grade
+    <select id="gradedd" onchange="popsub()">
+        <option></option>
+            <option>K</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>20</option>
+            <option>30</option>
+    </select>
+    <select id="subdd" onchange="popout()">
+             <option>select subject</option>   
+    </select>
+</form></div>
+    <div id="outtable">
+
+</div>
+
+</body>
+</html>
