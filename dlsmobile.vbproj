@@ -500,7 +500,9 @@
     <Content Include="resources\ont\grade_k_Personal and Soc.xml" />
     <Content Include="resources\ont\grade_k_Science and Tech.xml" />
     <Content Include="resources\ont\oncur.xml" />
+    <Content Include="saskcur.html" />
     <Content Include="xpath.html" />
+    <Content Include="cache.manifest" />
     <None Include="resources\sask\book.dls" />
     <Content Include="resources\sask\xml\apprenticeship_math_education_10.xml" />
     <Content Include="resources\sask\xml\apprenticeship_math_education_20.xml" />
