@@ -37,5 +37,5 @@
         }
         xmlhttp.open("GET", url, true);
         xmlhttp.send();
-        alert("working");
+        
     }
