@@ -19,6 +19,7 @@ function loadXMLDoc(dname) {
 //var gr = gradedd.options[gradedd.selectedIndex].value
 var xml = loadXMLDoc("resources/sask/xml/saskcur.xml");
 var path = "/curriculum/grade/subjects[@id='K']";
+var ddlist = new Array()
 // code for IE
 if (window.ActiveXObject) {
     var nodes = xml.selectNodes(path);
@@ -32,11 +33,15 @@ if (window.ActiveXObject) {
 else if (document.implementation && document.implementation.createDocument) {
     var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
     var result = nodes.iterateNext();
+    var i = 0
     document.write('<table border="1" cellspacing="1" cellpadding="5">');
     while (result) {
-        document.write('<tr><td>' + result.childNodes[0].nodeValue + '</td></tr>');
+        
+        document.write('<tr><td>' + result.childNodes[0].nodeValue + i + '</td></tr>');
         document.write("<br>");
+        i = i + 1
         result = nodes.iterateNext();
+        
     }
     document.write('</table>')
 }

@@ -6,7 +6,7 @@
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
         xmlhttp.onreadystatechange = function () {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            //if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var txt = "<table border='1'><tr><th>Grade</th><th>Number</th></tr>";
                 x = xmlhttp.responseXML.documentElement.getElementsByTagName("outcome");
                 for (i = 0; i < x.length; i++) {
@@ -34,7 +34,7 @@
                 txt = txt + "</table>";
                 document.getElementById('outtable').innerHTML = txt;
             }
-        }
+        
         xmlhttp.open("GET", url, true);
         xmlhttp.send();
         
