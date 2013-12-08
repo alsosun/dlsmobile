@@ -17,7 +17,7 @@
                             txt = txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
                         }
                         catch (er) {
-                            txt = txt + "<td> </td>";
+                            txt = txt + "<td> error </td>";
                         }
                     }
                     xx = x[i].getElementsByTagName("outcome_text");
@@ -26,7 +26,7 @@
                             txt = txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
                         }
                         catch (er) {
-                            txt = txt + "<td> </td>";
+                            txt = txt + "<td> error </td>";
                         }
                     }
                     txt = txt + "</tr>";
