@@ -73,9 +73,13 @@
 
     <!-- Define app splash screen for each platform. -->
     <gap:splash src="assets/icon/android/screen-ldpi-portrait.png"  gap:platform="android" gap:density="ldpi" />
+    <gap:splash src="assets/icon/android/screen-ldpi-landscape.png"  gap:platform="android" gap:density="ldpi" />
     <gap:splash src="assets/icon/android/screen-mdpi-portrait.png"  gap:platform="android" gap:density="mdpi" />
+    <gap:splash src="assets/icon/android/screen-mdpi-landscape.png"  gap:platform="android" gap:density="mdpi" />
     <gap:splash src="assets/icon/android/screen-hdpi-portrait.png"  gap:platform="android" gap:density="hdpi" />
+    <gap:splash src="assets/icon/android/screen-hdpi-landscape.png"  gap:platform="android" gap:density="hdpi" />
     <gap:splash src="assets/icon/android/screen-xhdpi-portrait.png" gap:platform="android" gap:density="xhdpi" />
+    <gap:splash src="assets/icon/android/screen-xhdpi-landscape.png" gap:platform="android" gap:density="xhdpi" />
     <gap:splash src="assets/icon/blackberry/screen-225.png"         gap:platform="blackberry" />
     <gap:splash src="assets/icon/ios/screen-iphone-portrait.png"    gap:platform="ios"     width="320" height="480" />
     <gap:splash src="assets/icon/ios/screen-iphone-portrait-2x.png" gap:platform="ios"     width="640" height="960" />
