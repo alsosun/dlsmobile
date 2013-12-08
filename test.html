@@ -32,14 +32,17 @@ if (window.ActiveXObject) {
 else if (document.implementation && document.implementation.createDocument) {
     var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
     var result = nodes.iterateNext();
-
+    document.write('<table border="1" cellspacing="1" cellpadding="5">');
     while (result) {
-        document.write(result.childNodes[0].nodeValue);
+        document.write('<tr><td>' + result.childNodes[0].nodeValue + '</td></tr>');
         document.write("<br>");
         result = nodes.iterateNext();
     }
+    document.write('</table>')
 }
 </script>
 </head>
-    <body></body>
+    <body>
+        <div id="subtable"></div>
+    </body>
 </html>
