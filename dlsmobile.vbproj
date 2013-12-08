@@ -85,38 +85,6 @@
     <Content Include="assets\css\owl.theme.css" />
     <Content Include="assets\css\photoswipe.css" />
     <Content Include="assets\css\style.css" />
-    <Content Include="assets\icon\android\drawable-hdpi\ic_launcher.png" />
-    <Content Include="assets\icon\android\drawable-ldpi\ic_launcher.png" />
-    <Content Include="assets\icon\android\drawable-mdpi\ic_launcher.png" />
-    <Content Include="assets\icon\android\drawable-xhdpi\ic_launcher.png" />
-    <Content Include="assets\icon\android\drawable-xxhdpi\ic_launcher.png" />
-    <Content Include="assets\icon\android\playstore-icon.png" />
-    <Content Include="assets\icon\ios7\Icon%402x.png" />
-    <Content Include="assets\icon\ios7\Icon-40%402x.png" />
-    <Content Include="assets\icon\ios7\Icon-40.png" />
-    <Content Include="assets\icon\ios7\Icon-60%402x.png" />
-    <Content Include="assets\icon\ios7\Icon-60.png" />
-    <Content Include="assets\icon\ios7\Icon-72%402x.png" />
-    <Content Include="assets\icon\ios7\Icon-72.png" />
-    <Content Include="assets\icon\ios7\Icon-76%402x.png" />
-    <Content Include="assets\icon\ios7\Icon-76.png" />
-    <Content Include="assets\icon\ios7\Icon-Small%402x.png" />
-    <Content Include="assets\icon\ios7\Icon-Small-50%402x.png" />
-    <Content Include="assets\icon\ios7\Icon-Small-50.png" />
-    <Content Include="assets\icon\ios7\Icon-Small.png" />
-    <Content Include="assets\icon\ios7\Icon.png" />
-    <Content Include="assets\icon\ios7\iTunesArtwork%402x.png" />
-    <Content Include="assets\icon\ios7\iTunesArtwork.png" />
-    <Content Include="assets\icon\ios\Icon%402x.png" />
-    <Content Include="assets\icon\ios\Icon-72%402x.png" />
-    <Content Include="assets\icon\ios\Icon-72.png" />
-    <Content Include="assets\icon\ios\Icon-Small%402x.png" />
-    <Content Include="assets\icon\ios\Icon-Small-50%402x.png" />
-    <Content Include="assets\icon\ios\Icon-Small-50.png" />
-    <Content Include="assets\icon\ios\Icon-Small.png" />
-    <Content Include="assets\icon\ios\Icon.png" />
-    <Content Include="assets\icon\ios\iTunesArtwork%402x.png" />
-    <Content Include="assets\icon\ios\iTunesArtwork.png" />
     <Content Include="assets\img\adv-468-60%402x.jpg" />
     <Content Include="assets\img\adv-468-60.jpg" />
     <Content Include="assets\img\back%402x.png" />
@@ -815,11 +783,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="assets\icon\blackberry\" />
-    <Folder Include="assets\icon\webos\" />
-    <Folder Include="assets\icon\windows-phone\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
