@@ -33,6 +33,7 @@
                 }
                 txt = txt + "</table>";
                 document.getElementById('outtable').innerHTML = txt;
+                alert(txt);
             }
         }
         xmlhttp.open("GET", url, true);
