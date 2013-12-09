@@ -18,7 +18,7 @@
                 alert("1");
                 {
                     try {
-                        x = xmlhttp.responseXML.document.getElementsByTagName("outcome");
+                        x = xmlhttp.responseXML.documentElement.getElementsByTagName("outcome");
                     }
                     catch (err) {
                         txe = err.message
