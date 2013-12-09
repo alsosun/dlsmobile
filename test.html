@@ -1,68 +1,210 @@
-﻿<html>
-    <head>
-        <title>test</title>
-        
-        
-<script>
-function loadXMLDoc(dname) {
-    if (window.XMLHttpRequest) {
-        xhttp = new XMLHttpRequest();
-    }
-    else {
-        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xhttp.open("GET", dname, false);
-    xhttp.send("");
-    return xhttp.responseXML;
-}
-</script>
-<script>
-    function loadXMLtable() {
-        //var gr = gradedd.options[gradedd.selectedIndex].value
-        var xml = loadXMLDoc("resources/sask/xml/arts_education_1.xml");
-        //var path = "/curriculum/grade/subjects[@id='K']";
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Saskatchewan</title>
+	<meta name="viewport" content="width=device-width, initial-scale=0.85" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+	<link rel="stylesheet" href="assets/css/style.css" />
+	<link rel="stylesheet" href="assets/css/owl.carousel.css" />
+	<link rel="stylesheet" href="assets/css/owl.theme.css" />
+	<link rel="stylesheet" href="assets/css/photoswipe.css" />
+	<script type="text/javascript" src="assets/js/klass.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+	<script type="text/javascript" src="assets/js/jstorage.js"></script>
+	<script type="text/javascript" src="assets/js/retina.js"></script>
+	<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="assets/js/code.photoswipe.jquery-3.0.5.min.js"></script>
+	<script src="assets/js/custom.js"></script>
+    <script type="text/javascript" src="assets/js/loadxmlout.js"></script>
+    <script type="text/javascript" src="assets/js/loadxmldoc.js"></script>
+    <script type="text/javascript">
+        function popsub() {
 
-        alert("start");
-        var txt = "<table border='1'><tr><th>Grade</th><th>Number</th></tr>";
-        x = xml.documentElement.getElementsByTagName("outcome");
-        for (i = 0; i < x.length; i++) {
-            txt = txt + "<tr>";
-            xx = x[i].getElementsByTagName("identifier");
-            {
-                try {
-                    txt = txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
-                }
-                catch (er) {
-                    txt = txt + "<td> error </td>";
-                }
-            }
-            xx = x[i].getElementsByTagName("outcome_text");
-            {
-                try {
-                    txt = txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
-                }
-                catch (er) {
-                    txt = txt + "<td> error </td>";
+            var gr = document.getElementById("gradedd").options[gradedd.selectedIndex].value;
+            var dropdown = document.getElementById("subdd");
+            dropdown.innerHTML = "";
+            dropdown[dropdown.length] = new Option("select subject", "select subject");
+            xml = loadXMLDoc("resources/sask/xml/saskcur.xml");
+            path = "/curriculum/grade/subjects[@id='" + gr + "']"
+            // code for IE
+            if (window.ActiveXObject) {
+                var nodes = xml.selectNodes(path);
+
+                for (i = 0; i < nodes.length; i++) {
+                    ddlist[0] = nodes[i].childNodes[0].nodeValue;
+                    dropdown[dropdown.length] = new Option(ddlist[i], ddlist[i]);
+
                 }
             }
-            txt = txt + "</tr>";
+                // code for Mozilla, Firefox, Opera, etc.
+            else if (document.implementation && document.implementation.createDocument) {
+                var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+                var result = nodes.iterateNext();
+
+                while (result) {
+                    //document.getElementById('outtable').innerHTML = result.childNodes[0].nodeValue 
+                    //document.write(result.childNodes[0].nodeValue);
+                    //document.write("<br>");
+                    var sub = result.childNodes[0].nodeValue
+                    dropdown[dropdown.length] = new Option(sub, sub);
+                    result = nodes.iterateNext();
+                }
+            }
+
         }
-        txt = txt + "</table>";
-        document.getElementById('outtable').innerHTML = txt;
-        alert(txt);
+    </script>
+<script>
 
+    function popout() {
+        var gr = gradedd.options[gradedd.selectedIndex].value
+        var sb = subdd.options[subdd.selectedIndex].value
+        var xml = loadXMLDoc("resources/sask/xml/" + sb + "_education_" + gr + ".xml")
+        alert("load")
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+            alert("chome")
+        }
+        else {// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            alert("ie")
+        }
+
+        //xmlhttp.onreadystatechange = function () {
+            //if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                alert("start")
+                var txt = "<table border='1'><tr><th>Grade</th><th>Number</th></tr>";
+                x = xml.documentElement.getElementsByTagName("outcome");
+                for (i = 0; i < x.length; i++) {
+                    txt = txt + "<tr>";
+                    xx = x[i].getElementsByTagName("identifier");
+                    {
+                        try {
+                            txt = txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+                        }
+                        catch (er) {
+                            txt = txt + "<td> error </td>";
+                        }
+                    }
+                    xx = x[i].getElementsByTagName("outcome_text");
+                    {
+                        try {
+                            txt = txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+                        }
+                        catch (er) {
+                            txt = txt + "<td> error </td>";
+                        }
+                    }
+                    txt = txt + "</tr>";
+                }
+                txt = txt + "</table>";
+                document.getElementById('outtable').innerHTML = txt;
+                alert(txt);
+            //}
+
+        //}
 
         xmlhttp.open("GET", url, true);
         xmlhttp.send();
-        alert("but this works");
-
+        alert("but this works")
     }
+    
 </script>
-
 </head>
-    <body>
-        <div id="subtable">
-            <input id="Button1" type="button" value="button" onclick="loadXMLtable()" /></div>
+<body>
+    <div data-role="page">
+	<div data-role="panel" data-position="left" data-theme="a" data-display="push" id="left_panel">
+		<ul data-role="listview" data-inset="false" data-theme="a">
+			<li><div style="text-align: center;"><img src="assets/img/logo.png" alt="Logo" /></div></li>
+			<li><a data-transition="slide" href="index.html"><img src="assets/img/menu-icons/home.png" alt="Home" class="ui-li-icon" />Home</a></li>
+			<li id="menu_news" class="countable"><a data-transition="slide" data-count="3" href="cur.html"><img src="assets/img/menu-icons/news.png" alt="Curriculum" class="ui-li-icon" />Curriculum<span class="ui-li-count hidden accent-color"></span></a></li>
+			<li id="menu_recipes" class="countable"><a data-transition="slide" data-count="2" href="planners.html"><img src="assets/img/menu-icons/star.png" alt="Planners" class="ui-li-icon" />Planners<span class="ui-li-count hidden accent-color"></span></a></li>
+			<li id="menu_gallery" class="countable"><a data-transition="slide" data-count="0" href="features.html"><img src="assets/img/menu-icons/information.png" alt="Features" class="ui-li-icon" />Features<span class="ui-li-count hidden accent-color"></span></a></li>
+            <li id="menu_video" class="countable"><a data-transition="slide" data-count="2" href="video.html"><img src="assets/img/menu-icons/video.png" alt="Video" class="ui-li-icon" />Tutorials<span class="ui-li-count hidden accent-color"></span></a></li>
+			<li id="menu_blog" class="countable"><a data-transition="slide" data-count="3" href="blog.html"><img src="assets/img/menu-icons/blog.png" alt="Blog" class="ui-li-icon" />News<span class="ui-li-count hidden accent-color"></span></a></li>
+            <li><a data-transition="slide" href="information.html"><img src="assets/img/menu-icons/information.png" alt="Information" class="ui-li-icon" />Contact</a></li>
+		</ul>
+		<div style="position: relative; top: 15px;">
+			<p>Socialize</p>
+			<a href="https://twitter.com/DLS_Canada"><img src="assets/img/panel/twitter.png" alt="Twitter" /></a>
+			<a href="https://www.facebook.com/Digitallearnersolutions"><img src="assets/img/panel/facebook.png" alt="Facebook" /></a>
+			<a href="https://plus.google.com/101568684619478372786"><img src="assets/img/panel/google.png" alt="Google+" /></a>
+			<a href="https://www.youtube.com/user/DLSolutions2013"><img src="assets/img/panel/youtube.png" alt="YouTube" /></a>
+		</div>
+	</div>
+	<div data-role="panel" data-theme="a" data-position="right" data-display="push" id="right_panel">
+		<div style="text-align: center;">
+			<h4 style="margin-top: 0px;">Share this page on:</h4>
+			<div class="panel-social-wrap">
+				<a class="facebook_share_link" title="Share link on Facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://www.digitallearnersolutions.com/m/&p[images][0]=&p[title]=Unit%20and%20Rubric%20Planner&p[summary]=" rel="nofollow">
+					<div class="panel-social panel-social-twitter accent-color">
+						<img src="assets/img/facebook.png" alt="Facebook" />
+					</div>
+				</a>
+				<div class="panel-social-counter facebook_number"></div>
+			</div>
+			<div class="panel-social-wrap">
+				<a class="twitter_share_link" title="Share link on Twitter" target="_blank" href="http://twitter.com/home?status=All%20teachers%20need%20to%20see%20this!%20http://www.digitallearnersolutions.com/m/%20" rel="nofollow">
+					<div class="panel-social panel-social-facebook accent-color">
+						<img src="assets/img/twitter.png" alt="Twitter" />
+					</div>
+				</a>
+				<div class="panel-social-counter twitter_number"></div>
+			</div>
+			<div class="panel-social-wrap">
+				<a class="google_share_link" title="Share link on Google+" target="_blank" href="https://plus.google.com/share?url=http://www.digitallearnersolutions.com/m/%20" rel="nofollow">
+					<div class="panel-social panel-social-google accent-color">
+						<img src="assets/img/google.png" alt="Google+" />
+					</div>
+				</a>
+				<div class="panel-social-counter google_number"></div>
+			</div>
+		</div>
+	</div>
+	<div id="header" data-role="header" data-position="fixed" data-theme="c">
+		<div class="header_wrapper">
+			<a style="border-left: none;" class="header_button" href="#left_panel" data-inline="true" data-role="button" data-corners="false" data-theme="c">
+				<img class="header-btn-image" style="width: 100%; height: 100%;" src="assets/img/menu.png" alt="Menu" />
+				<span class="menu-btn-background"></span>
+				<span class="counter-header hidden accent-color" style="color: #ffffff;"></span>
+			</a>
+			<span class="page_title">Saskatchewan Curriculum</span>
+			<a style="float: right; border: none;" class="header_button" href="#" data-inline="true" data-rel="back" data-role="button" data-corners="false" data-theme="c">
+				<img style="width: 100%; height: 100%;" src="assets/img/back.png" alt="Back" />
+				<span class="btn-background"></span>
+			</a>
+			<a style="float: right;" class="header_button" href="#right_panel" data-inline="true" data-role="button" data-corners="false" data-theme="c">
+				<img style="width: 100%; height: 100%;" src="assets/img/share.png" alt="Share" />
+				<span class="btn-background share-btn-background"></span>
+			</a>
+			<div style="clear: both"></div>
+		</div>
+	</div>
+    <div><form>
+    Select Grade
+    <select id="gradedd" onchange="popsub()">
+        <option></option>
+            <option>K</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>20</option>
+            <option>30</option>
+    </select>
+    <select id="subdd" onchange="popout()">
+             <option>select subject</option>   
+    </select>
+</form></div>
+    <div id="outtable">
 
-    </body>
+ </div>
+</div>
+</body>
 </html>
