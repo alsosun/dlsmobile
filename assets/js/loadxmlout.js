@@ -1,5 +1,5 @@
     function loadXMLout(url) {
-        alert("loaded")
+        alert("fired")
         if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
         }
@@ -8,9 +8,10 @@
         }
         xmlhttp.open("GET", url, true);
         xmlhttp.send();
-        //return xhttp.responseXML;
-        alert("but this works")
+        
+        alert("loaded file");
         xmlhttp.onreadystatechange = function () {
+            alert("in function")
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 alert("start")
                 var txt = "<table border='1'><tr><th>Grade</th><th>Number</th></tr>";

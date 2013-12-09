@@ -30,17 +30,17 @@ body .ui-body-c .ui-link, body .ui-body-c .ui-link:active, body .ui-body-c .ui-l
     background: #206509 !important;
 }
 .ui-checkbox-on .ui-icon, .ui-radio-on .ui-icon {
-	background-color: #ff6446!important;
+	background-color: #206509!important;
 }
 .svg-accent {
 	fill: #206509!important;
 }
 .ui-btn-active {
-	box-shadow: inset 0px 0px 3px #ff6446, 0px 0px 9px #ff6446!important;
+	box-shadow: inset 0px 0px 3px #206509, 0px 0px 9px #206509!important;
 	border: none!important;
 }
 .ui-focus, .ui-btn:focus { 
-	box-shadow: inset 0px 0px 3px #ff6446, 0px 0px 9px #ff6446!important;
+	box-shadow: inset 0px 0px 3px #206509, 0px 0px 9px #206509!important;
 }
 /* PANELS */
 .panel-social-wrap {
@@ -731,13 +731,13 @@ code {
 	color: #000000;
 }
 .highlight-red {
-	background-color: #e32424;
+	background-color: #87E425;
 }
 .highlight-orange {
-	background-color: #e37424;
+	background-color: #87E425;
 }
 .highlight-yellow {
-	background-color: #e3c324;
+	background-color: #87E425;
 }
 .highlight-green {
 	background-color: #b3e324;
