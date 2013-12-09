@@ -1,7 +1,7 @@
 ﻿<html>
     <head>
         <title>test</title>
-        <script src="wgxpath.install.js"></script>
+        
         
 <script>
 function loadXMLDoc(dname) {
@@ -15,39 +15,54 @@ function loadXMLDoc(dname) {
     xhttp.send("");
     return xhttp.responseXML;
 }
-
-//var gr = gradedd.options[gradedd.selectedIndex].value
-var xml = loadXMLDoc("resources/sask/xml/saskcur.xml");
-var path = "/curriculum/grade/subjects[@id='K']";
-var ddlist = new Array()
-// code for IE
-if (window.ActiveXObject) {
-    var nodes = xml.selectNodes(path);
-
-    for (i = 0; i < nodes.length; i++) {
-        document.write(nodes[i].childNodes[0].nodeValue);
-        document.write("<br>");
-    }
-}
-    // code for Mozilla, Firefox, Opera, etc.
-else if (document.implementation && document.implementation.createDocument) {
-    var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
-    var result = nodes.iterateNext();
-    var i = 0
-    document.write('<table border="1" cellspacing="1" cellpadding="5">');
-    while (result) {
-        
-        document.write('<tr><td>' + result.childNodes[0].nodeValue + i + '</td></tr>');
-        document.write("<br>");
-        i = i + 1
-        result = nodes.iterateNext();
-        
-    }
-    document.write('</table>')
-}
 </script>
+<script>
+    function loadXMLtable() {
+        //var gr = gradedd.options[gradedd.selectedIndex].value
+        var xml = loadXMLDoc("resources/sask/xml/arts_education_1.xml");
+        //var path = "/curriculum/grade/subjects[@id='K']";
+
+        alert("start");
+        var txt = "<table border='1'><tr><th>Grade</th><th>Number</th></tr>";
+        x = xml.documentElement.getElementsByTagName("outcome");
+        for (i = 0; i < x.length; i++) {
+            txt = txt + "<tr>";
+            xx = x[i].getElementsByTagName("identifier");
+            {
+                try {
+                    txt = txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+                }
+                catch (er) {
+                    txt = txt + "<td> error </td>";
+                }
+            }
+            xx = x[i].getElementsByTagName("outcome_text");
+            {
+                try {
+                    txt = txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+                }
+                catch (er) {
+                    txt = txt + "<td> error </td>";
+                }
+            }
+            txt = txt + "</tr>";
+        }
+        txt = txt + "</table>";
+        document.getElementById('outtable').innerHTML = txt;
+        alert(txt);
+
+
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+        alert("but this works");
+
+    }
+</script>
+
 </head>
     <body>
-        <div id="subtable"></div>
+        <div id="subtable">
+            <input id="Button1" type="button" value="button" onclick="loadXMLtable()" /></div>
+
     </body>
 </html>

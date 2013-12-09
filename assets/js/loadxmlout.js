@@ -1,12 +1,14 @@
     function loadXMLout(url) {
+        loadXMLDoc(url);
         if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
         }
         else {// code for IE6, IE5
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
-        //xmlhttp.onreadystatechange = function () {
-            //if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 alert("start")
                 var txt = "<table border='1'><tr><th>Grade</th><th>Number</th></tr>";
                 x = xmlhttp.responseXML.documentElement.getElementsByTagName("outcome");
@@ -35,9 +37,9 @@
                 txt = txt + "</table>";
                 document.getElementById('outtable').innerHTML = txt;
                 alert(txt);
-            //}
+            }
 
-        //}
+        }
 
         xmlhttp.open("GET", url, true);
         xmlhttp.send();
