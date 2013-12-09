@@ -16,7 +16,7 @@
                 alert("start");
                 var txt = "<table border='1'><tr><th>Grade</th><th>Number</th></tr>";
                 alert("1");
-                x = xmlhttp.responseXML.documentElement.getElementsByTagName("outcome");
+                x = xmlhttp.responseXML.getElementsByTagName("outcome");
                 alert("2");
                 for (i = 0; i < x.length; i++) {
                     txt = txt + "<tr>";
