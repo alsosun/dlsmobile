@@ -70,8 +70,8 @@
             alert("ie")
         }
 
-        //xmlhttp.onreadystatechange = function () {
-            //if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 alert("start")
                 var txt = "<table border='1'><tr><th>Grade</th><th>Number</th></tr>";
                 x = xml.documentElement.getElementsByTagName("outcome");
@@ -100,9 +100,9 @@
                 txt = txt + "</table>";
                 document.getElementById('outtable').innerHTML = txt;
                 alert(txt);
-            //}
+            }
 
-        //}
+        }
 
         xmlhttp.open("GET", url, true);
         xmlhttp.send();
