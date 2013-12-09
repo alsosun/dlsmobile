@@ -5,8 +5,9 @@
         else {// code for IE6, IE5
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
-        xmlhttp.onreadystatechange = function () {
+        //xmlhttp.onreadystatechange = function () {
             //if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                alert("start")
                 var txt = "<table border='1'><tr><th>Grade</th><th>Number</th></tr>";
                 x = xmlhttp.responseXML.documentElement.getElementsByTagName("outcome");
                 for (i = 0; i < x.length; i++) {
@@ -34,12 +35,10 @@
                 txt = txt + "</table>";
                 document.getElementById('outtable').innerHTML = txt;
                 alert(txt);
-            }
-<<<<<<< HEAD
-        
-=======
+            //}
+
         //}
->>>>>>> f4398aad126b3447cd824f1ad003c029731fb365
+
         xmlhttp.open("GET", url, true);
         xmlhttp.send();
         alert("but this works")
