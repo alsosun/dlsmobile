@@ -1,5 +1,6 @@
     function loadXMLout(url) {
         loadXMLDoc(url);
+        alert("loaded")
         if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
         }
