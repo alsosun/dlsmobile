@@ -12,13 +12,25 @@
         alert("loaded file");
         xmlhttp.onreadystatechange = function () {
             alert("in function")
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                alert("start")
+            //if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                alert("start");
                 var txt = "<table border='1'><tr><th>Grade</th><th>Number</th></tr>";
-                x = xmlhttp.responseXML.documentElement.getElementsByTagName("outcome");
+                alert("1");
+                {
+                    try {
+                        x = xmlhttp.responseXML.documentElement.getElementsByTagName("outcome");
+                    }
+                    catch (err) {
+                        txe = err.message
+                        alert(txe)
+                    }
+                }
+                
+                alert("2");
                 for (i = 0; i < x.length; i++) {
                     txt = txt + "<tr>";
                     xx = x[i].getElementsByTagName("identifier");
+                    alert("3");
                     {
                         try {
                             txt = txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
@@ -41,7 +53,7 @@
                 txt = txt + "</table>";
                 document.getElementById('outtable').innerHTML = txt;
                 alert(txt);
-            }
+            //}
 
         }
 
