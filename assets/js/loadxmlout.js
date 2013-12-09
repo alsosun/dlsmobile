@@ -12,7 +12,7 @@
         alert("loaded file");
         xmlhttp.onreadystatechange = function () {
             alert("in function")
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            //if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 alert("start")
                 var txt = "<table border='1'><tr><th>Grade</th><th>Number</th></tr>";
                 x = xmlhttp.responseXML.documentElement.getElementsByTagName("outcome");
@@ -41,7 +41,7 @@
                 txt = txt + "</table>";
                 document.getElementById('outtable').innerHTML = txt;
                 alert(txt);
-            }
+            //}
 
         }
 
