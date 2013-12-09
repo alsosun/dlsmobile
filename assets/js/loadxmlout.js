@@ -33,9 +33,14 @@
                 }
                 txt = txt + "</table>";
                 document.getElementById('outtable').innerHTML = txt;
+                alert(txt);
             }
+<<<<<<< HEAD
         
+=======
+        //}
+>>>>>>> f4398aad126b3447cd824f1ad003c029731fb365
         xmlhttp.open("GET", url, true);
         xmlhttp.send();
-        
+        alert("but this works")
     }
