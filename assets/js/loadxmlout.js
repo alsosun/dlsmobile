@@ -11,16 +11,8 @@
             //if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 
                 var txt = "<table border='1'><tr><th>Grade</th><th>Number</th></tr>";
-                alert("1");
-                {
-                    try {
-                        x = xmlhttp.responseXML.documentElement.getElementsByTagName("outcome");
-                    }
-                    catch (err) {
-                        txe = err.message
-                        alert(txe)
-                    }
-                }
+                x = xmlhttp.responseXML.documentElement.getElementsByTagName("outcome");
+                    
                 
                 
                 for (i = 0; i < x.length; i++) {
