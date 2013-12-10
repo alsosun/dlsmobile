@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head><meta charset="UTF-8">
-	<title>Curriculum</title>
-		<meta name="viewport" content="width=device-width, initial-scale=0.85">
+	<title>Ontario Curriculum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=0.85">
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
 	<link rel="stylesheet" href="assets/css/style.css" />
 	<link rel="stylesheet" href="assets/css/owl.carousel.css">
@@ -16,6 +16,117 @@
 	<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="assets/js/code.photoswipe.jquery-3.0.5.min.js"></script>
 	<script src="assets/js/custom.js"></script>
+    <script type="text/javascript" src="assets/js/loadxmlout.js"></script>
+    <script type="text/javascript" src="assets/js/loadxmldoc.js"></script>
+    <script type="text/javascript">
+        function popsub() {
+
+            var gr = document.getElementById("gradedd").options[gradedd.selectedIndex].value;
+            var dropdown = document.getElementById("subdd");
+            var strdropdown = document.getElementById("stranddd");
+            dropdown.innerHTML = "";
+            strdropdown.innerHTML = "";
+            dropdown[dropdown.length] = new Option("select subject", "select subject");
+            xml = loadXMLDoc("resources/ont/oncur.xml");
+            path = "/curriculum/grade/subjects[@id='" + gr + "']"
+            // code for IE
+            if (window.ActiveXObject) {
+                var nodes = xml.selectNodes(path);
+
+                for (i = 0; i < nodes.length; i++) {
+                    ddlist[0] = nodes[i].childNodes[0].nodeValue;
+                    dropdown[dropdown.length] = new Option(ddlist[i], ddlist[i]);
+
+                }
+            }
+                // code for Mozilla, Firefox, Opera, etc.
+            else if (document.implementation && document.implementation.createDocument) {
+                var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+                var result = nodes.iterateNext();
+
+                while (result) {
+                    
+                    var sub = result.childNodes[0].nodeValue
+                    dropdown[dropdown.length] = new Option(sub, sub);
+                    result = nodes.iterateNext();
+                }
+            }
+
+        }
+    </script>
+    <script>
+        function popstrand() {
+            var gr = gradedd.options[gradedd.selectedIndex].value
+            var sb = subdd.options[subdd.selectedIndex].value
+            var dropdown = document.getElementById("stranddd");
+            dropdown.innerHTML = "";
+            dropdown[dropdown.length] = new Option("select strand", "select strand");
+            xml = loadXMLDoc("resources/ont/grade_" + gr + "_" + sb + ".xml");
+            path = "//strand_text"
+            // code for IE
+            if (window.ActiveXObject) {
+                var nodes = xml.selectNodes(path);
+
+                for (i = 0; i < nodes.length; i++) {
+                    ddlist[0] = nodes[i].childNodes[0].nodeValue;
+                    dropdown[dropdown.length] = new Option(ddlist[i], ddlist[i]);
+
+                }
+            }
+                // code for Mozilla, Firefox, Opera, etc.
+            else if (document.implementation && document.implementation.createDocument) {
+                var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+                var result = nodes.iterateNext();
+
+                while (result) {
+                    var sub = result.childNodes[0].nodeValue
+                    dropdown[dropdown.length] = new Option(sub, sub);
+                    result = nodes.iterateNext();
+                }
+            }
+        }
+    </script>
+<script>
+
+    function popout() {
+        var gr = gradedd.options[gradedd.selectedIndex].value
+        var sb = subdd.options[subdd.selectedIndex].value
+        var str = stranddd.options[stranddd.selectedIndex].value
+        xml = loadXMLDoc("resources/ont/grade_" + gr + "_" + sb + ".xml");
+        
+            path = "/curriculum/strand[@id='" + str + "']/overalls/overall/overall_text"
+            
+            // code for IE
+            if (window.ActiveXObject) {
+                var nodes = xml.selectNodes(path);
+
+                for (i = 0; i < nodes.length; i++) {
+                    ddlist[0] = nodes[i].childNodes[0].nodeValue;
+                    dropdown[dropdown.length] = new Option(ddlist[i], ddlist[i]);
+
+                }
+            }
+                // code for Mozilla, Firefox, Opera, etc.
+            
+                else if (document.implementation && document.implementation.createDocument) {
+                var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+                var result = nodes.iterateNext();
+                var txt = "<table border='1'><tr><th>Strand</th><th>OVERALL</th></tr>";
+                    
+                while (result) {
+                    ind = str;
+                    
+                    var over = result.childNodes[0].nodeValue
+                    txt = txt + "<tr><td>" + ind + "</td><td>" + over + "</td></tr>"
+                    result = nodes.iterateNext();
+                }
+                }
+            txt = txt + "</table>"
+            document.getElementById('outtable').innerHTML = txt;
+    }
+</script>
+
+
 </head>
 <body>
 <div data-role="page">
@@ -74,7 +185,7 @@
 				<span class="menu-btn-background"></span>
 				<span class="counter-header hidden accent-color" style="color: #ffffff;"></span>
 			</a>
-			<span class="page_title">Curriculum</span>
+			<span class="page_title">Ontario Curriculum</span>
 			<a style="float: right; border: none;" class="header_button" href="#" data-inline="true" data-rel="back" data-role="button" data-corners="false" data-theme="c">
 				<img style="width: 100%; height: 100%;" src="assets/img/back.png" alt="Back">
 				<span class="btn-background"></span>
@@ -87,98 +198,37 @@
 		</div>
 	</div><!-- /header -->
 	<div data-role="content">
-		<div class="container" style="padding: 0px;">
-			<ul id="news_list" data-role="listview" data-inset="false">
-				<li><div class="news-image-wrap">
-							<div class="news-single-image-container">
-								<div class="accent-color news-image-divider"></div>
-                                <a href="saskcur.html" rel="external"><!-- /for js mobile -->
-								<!-- <a href="http://www.digitallearnersolutions.com/m/cursask.aspx" rel="external" for ie-->
-									<img src="assets/img/content-images/1f.jpg" alt="News 1">
-									<div class="news-icon-wrapper">
-										<svg class="news-icon news-single svg-accent" viewBox="0 0 500 260" preserveAspectRatio="xMinYMin meet">
-											<rect width="500" height="280" clip-path="url(#news-path)" />
-										</svg>
-										<img class="news-arrow" src="assets/img/news-arrow.png" alt="Arrow">
-									</div>
-								</a>
-								<div class="news-single-title">
-									<span class="news-single-title-text">Browse Saskatchewan Outcomes</span>
-								</div>
-							</div>
-					</div>
-				</li>
-				<li><div class="news-image-wrap">
-							<div class="news-single-image-container">
-								<div class="accent-color news-image-divider"></div>
-								<a href="ont.html" rel="external">
-									<img src="assets/img/content-images/2f.jpg" alt="News 2">
-									<div class="news-icon-wrapper">
-										<svg class="news-icon news-single svg-accent" viewBox="0 0 500 260" preserveAspectRatio="xMinYMin meet">
-											<rect width="500" height="280" clip-path="url(#news-path)" />
-										</svg>
-										<img class="news-arrow" src="assets/img/news-arrow.png" alt="Arrow">
-									</div>
-								</a>
-								<div class="news-single-title">
-									<span class="news-single-title-text">Browse Ontario Overall Expectations</span>
-								</div>
-							</div>
-					</div>
-				</li>
-				<li><div class="news-image-wrap">
-							<div class="news-single-image-container">
-								<div class="accent-color news-image-divider"></div>
-								<a href="cc.aspx" rel="external">
-									<img src="assets/img/content-images/3f.jpg" alt="News 3">
-									<div class="news-icon-wrapper">
-										<svg class="news-icon news-single svg-accent" viewBox="0 0 500 260" preserveAspectRatio="xMinYMin meet">
-											<rect width="500" height="280" clip-path="url(#news-path)" />
-										</svg>
-										<img class="news-arrow" src="assets/img/news-arrow.png" alt="Arrow">
-									</div>
-								</a>
-								<div class="news-single-title">
-									<span class="news-single-title-text">Common Core State Standards</span>
-								</div>
-							</div>
-					</div>
-				</li>
-                <li><div class="news-image-wrap">
-							<div class="news-single-image-container">
-								<div class="accent-color news-image-divider"></div>
-								<a href="planners.html">
-									<img src="assets/img/content-images/4f.jpg" alt="News 2">
-									<div class="news-icon-wrapper">
-										<svg class="news-icon news-single svg-accent" viewBox="0 0 500 260" preserveAspectRatio="xMinYMin meet">
-											<rect width="500" height="280" clip-path="url(#news-path)" />
-										</svg>
-										<img class="news-arrow" src="assets/img/news-arrow.png" alt="Arrow">
-									</div>
-								</a>
-								<div class="news-single-title">
-									<span class="news-single-title-text">General / Custom Curriculum</span>
-								</div>
-							</div>
-					</div>
-				</li>
-			</ul>
+		<div style="text-align:center" class="container">
+			<h1>Grade</h1>
+				<p><select id="gradedd" onchange="popsub()">
+        <option></option>
+            <option>K</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            
+    </select></p>
+            <h1>Subject</h1>
+                <p><select id="subdd" onchange="popstrand()">
+             <option>select subject</option>   
+    </select></p>
+                
+            <h1>Strand</h1>
+                <p><select id="stranddd" onchange="popout()">
+             <option>select strand</option>   
+    </select></p>	
 		</div>
-		<!-- Do not remove this SVG shape below -->
-		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="height: 0px; display: block;">
-			<defs>
-				<clipPath id="news-path">
-					<path fill-rule="evenodd" clip-rule="evenodd" fill="#666666" d="M614.557,0c0,81.931,0,170.339,0,252.279
-		c-77.667-1.666-273,7.001-344.148-11.379C193.505,221.033,161.631,137.386,117.99,78.661C99.345,53.564,64.266,22.639,34.419,9.832
-		C24.245,5.466,9.182,5.029,0,0C204.833,0,409.725,0,614.557,0z"/>
-				</clipPath>
-			</defs>
-		</svg>
-		<!-- Do not remove <svg> above -->
+        <div id="outtable"></div>
 				<div>
-					<h6 class="footer-text">DLS Copyright 2013. All rights reserved</h6>
+					<h6 class="footer-text">Copyright 2013. All rights reserved</h6>
 				</div>
 			</div><!-- /content -->
 		</div><!-- /page -->
 	</body>
 </html>
+

@@ -282,6 +282,7 @@
     <Content Include="index.html" />
     <Content Include="information.html" />
     <Content Include="ont.aspx" />
+    <Content Include="ont.html" />
     <Content Include="oops.html" />
     <Content Include="planners.html" />
     <Content Include="resources\core\HS Algebra\Arithmetic\hs.xml" />
