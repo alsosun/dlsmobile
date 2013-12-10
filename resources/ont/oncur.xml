@@ -1,10 +1,10 @@
 <curriculum>
 	<grade>
-		<grade_text>K</grade_text>
-		<subjects id='K'>Arts</subjects>
-		<subjects id="K">Health and PA</subjects>
-		<subjects id="K">Language</subjects>
-		<subjects id="K">Mathematics</subjects>
+		<grade_text>k</grade_text>
+		<subjects id='k'>Arts</subjects>
+		<subjects id="k">Health and PA</subjects>
+		<subjects id="k">Language</subjects>
+		<subjects id="k">Mathematics</subjects>
 		<subjects id="K">Personal and Soc</subjects>
 		<subjects id="K">Science and Tech</subjects>
 	</grade>

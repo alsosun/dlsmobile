@@ -275,6 +275,7 @@
     <Content Include="blog-single-5.html" />
     <Content Include="blog.html" />
     <Content Include="cc.aspx" />
+    <Content Include="cc.html" />
     <Content Include="cur.html" />
     <Content Include="cursask.aspx" />
     <Content Include="default.html" />

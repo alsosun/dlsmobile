@@ -199,7 +199,18 @@
 	</div><!-- /header -->
 	<div data-role="content">
 		<div style="text-align:center" class="container">
-			<h1>Grade</h1>
+			<h1>Subject Areas</h1>
+                <p><select id="subdd" onchange="popstrand()">
+             <option>select subject</option>
+             <option>Language Arts</option>
+                <option>Mathematics</option>
+                <option>HS Algebra</option>
+                <option>HS Functions</option>
+                <option>HS Geometry</option>
+                <option>HS Number and Quantity</option>
+                <option>HS Statistics and Probability</option>   
+    </select></p>
+            <h1>Grade</h1>
 				<p><select id="gradedd" onchange="popsub()">
         <option></option>
             <option>K</option>
@@ -211,12 +222,12 @@
             <option>6</option>
             <option>7</option>
             <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+    </select></p>
             
-    </select></p>
-            <h1>Subject</h1>
-                <p><select id="subdd" onchange="popstrand()">
-             <option>select subject</option>   
-    </select></p>
                 
             <h1>Strand</h1>
                 <p><select id="stranddd" onchange="popout()">
