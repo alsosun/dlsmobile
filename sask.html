@@ -43,9 +43,7 @@
                 var result = nodes.iterateNext();
 
                 while (result) {
-                    //document.getElementById('outtable').innerHTML = result.childNodes[0].nodeValue 
-                    //document.write(result.childNodes[0].nodeValue);
-                    //document.write("<br>");
+                    
                     var sub = result.childNodes[0].nodeValue
                     dropdown[dropdown.length] = new Option(sub, sub);
                     result = nodes.iterateNext();

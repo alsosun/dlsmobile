@@ -34,9 +34,11 @@
             
             if (res == true) {
                 
-                
+                grdropdown[grdropdown.length] = new Option("hs", "hs")
+                grdropdown.selectedIndex=0
                 document.getElementById("gradetxt").style.visibility = "hidden";
                 document.getElementById("gradelb").style.visibility = "hidden";
+
                 xml = loadXMLDoc("resources/core/" + areasel + "/corecur.xml");
                 path = "/curriculum/grade/subjects"
                 var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
@@ -53,8 +55,8 @@
             else  {
                 document.getElementById("gradetxt").style.visibility = "visible";
                 document.getElementById("gradelb").style.visibility = "visible";
-                gradedd[grdropdown.length] = new Option("select", "select")
-                gradedd[grdropdown.length] = new Option("K", "K")
+                grdropdown[grdropdown.length] = new Option("select", "select")
+                grdropdown[grdropdown.length] = new Option("K", "K")
                 var count;
                 var total;
                 if (areasel == "Mathematics") {
@@ -69,8 +71,7 @@
                     gradedd[grdropdown.length] = new Option(count, count)
                 }
             }
-            
-            
+                    
         }
     </script>
     <script type="text/javascript">
@@ -96,74 +97,34 @@
          
         }
     </script>
-    <script>
-        function popstrand() {
-            var gr = gradedd.options[gradedd.selectedIndex].value
-            var areasel = areadd.options[areadd.selectedIndex].value
-            var dropdown = document.getElementById("stranddd");
-            dropdown.innerHTML = "";
-            dropdown[dropdown.length] = new Option("select strand", "select strand");
-            xml = loadXMLDoc("resources/ont/grade_" + gr + "_" + sb + ".xml");
-            path = "//strand_text"
-            // code for IE
-            if (window.ActiveXObject) {
-                var nodes = xml.selectNodes(path);
-
-                for (i = 0; i < nodes.length; i++) {
-                    ddlist[0] = nodes[i].childNodes[0].nodeValue;
-                    dropdown[dropdown.length] = new Option(ddlist[i], ddlist[i]);
-
-                }
-            }
-                // code for Mozilla, Firefox, Opera, etc.
-            else if (document.implementation && document.implementation.createDocument) {
-                var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
-                var result = nodes.iterateNext();
-
-                while (result) {
-                    var sub = result.childNodes[0].nodeValue
-                    dropdown[dropdown.length] = new Option(sub, sub);
-                    result = nodes.iterateNext();
-                }
-            }
-        }
-    </script>
+    
 <script>
-
     function popout() {
-        var gr = gradedd.options[gradedd.selectedIndex].value
-        var sb = subdd.options[subdd.selectedIndex].value
-        var str = stranddd.options[stranddd.selectedIndex].value
-        xml = loadXMLDoc("resources/ont/grade_" + gr + "_" + sb + ".xml");
+        
+        var areasel = areadd.options[areadd.selectedIndex].value;
+        var str = stranddd.options[stranddd.selectedIndex].value;
+        var gr = gradedd.options[gradedd.selectedIndex].value;
 
-        path = "/curriculum/strand[@id='" + str + "']/overalls/overall/overall_text"
-
-        // code for IE
-        if (window.ActiveXObject) {
-            var nodes = xml.selectNodes(path);
-
-            for (i = 0; i < nodes.length; i++) {
-                ddlist[0] = nodes[i].childNodes[0].nodeValue;
-                dropdown[dropdown.length] = new Option(ddlist[i], ddlist[i]);
-
-            }
-        }
-            // code for Mozilla, Firefox, Opera, etc.
-
-        else if (document.implementation && document.implementation.createDocument) {
+                
+        
+        
+        xml = loadXMLDoc("resources/core/" + areasel + "/" + str + "/" + gr + ".xml");
+        
+        //path = "/LearningStandards/LearningStandardItem/StatementCodes/StatementCode"
+        path = "/LearningStandards/LearningStandardItem/Statements/Statement"
             var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
             var result = nodes.iterateNext();
-            var txt = "<table border='1'><tr><th>Strand</th><th>OVERALL</th></tr>";
+            var txt = "<table border='1'><tr><th>Code</th><th>Standard</th></tr>";
 
             while (result) {
-                ind = str;
-
-                var over = result.childNodes[0].nodeValue
+                ind = "Grade " + gr + " " + str;
+                //ind = result.parentNode.NextSibling.childNodes[0].nodeValue;
+                var over = result.childNodes[0].nodeValue;
                 txt = txt + "<tr><td>" + ind + "</td><td>" + over + "</td></tr>"
                 result = nodes.iterateNext();
             }
-        }
-        txt = txt + "</table>"
+        
+            txt = txt + "<tr><td>citation</td><td>Adapted from Common Core State Standards XML files @ www.corestandards.org</td></tr></table></table>"
         document.getElementById('outtable').innerHTML = txt;
     }
 </script>
@@ -253,19 +214,7 @@
             <h1 id="gradelb">Grade</h1>
 				<p id="gradetxt"><select id="gradedd" onchange="popstr()">
                 <option>select grade</option>
-                <!--<option>K</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12</option>--> 
+                
     </select></p>
             
                 

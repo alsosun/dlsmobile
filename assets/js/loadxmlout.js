@@ -38,7 +38,7 @@
                     }
                     txt = txt + "</tr>";
                 }
-                txt = txt + "</table>";
+                txt = txt + "<tr><td>citation</td><td>Adapted from Saskatchewan Ministry of Education @ www.curriculum.gov.sk.ca</td></tr></table>";
                 document.getElementById('outtable').innerHTML = txt;
                 
             //}
