@@ -18,7 +18,7 @@
 	<script src="assets/js/custom.js"></script>
     <script type="text/javascript" src="assets/js/loadxmlout.js"></script>
     <script type="text/javascript" src="assets/js/loadxmldoc.js"></script>
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
         function selchk() {
             
             var areasel = areadd.options[areadd.selectedIndex].value;
@@ -127,10 +127,121 @@
             txt = txt + "<tr><td>citation</td><td>Adapted from Common Core State Standards XML files @ www.corestandards.org</td></tr></table></table>"
         document.getElementById('outtable').innerHTML = txt;
     }
-</script>
+</script>-->
 </head>
 <body>
 <div data-role="page">
+    <script type="text/javascript" src="assets/js/loadxmldoc.js"></script>
+    <script type="text/javascript">
+        function selchk() {
+
+            var areasel = areadd.options[areadd.selectedIndex].value;
+            // clear grade and strand
+
+            document.getElementById("stranddd").innerHTML = "";
+            var grdropdown = document.getElementById("gradedd");
+            grdropdown.innerHTML = ""
+            var strdropdown = document.getElementById("stranddd");
+            // test for HS           
+            var patt = new RegExp("HS");
+            var res = patt.test(areasel);
+
+            if (res == true) {
+
+                grdropdown[grdropdown.length] = new Option("hs", "hs")
+                grdropdown.selectedIndex = 0
+                document.getElementById("gradetxt").style.visibility = "hidden";
+                document.getElementById("gradelb").style.visibility = "hidden";
+
+                xml = loadXMLDoc("resources/core/" + areasel + "/corecur.xml");
+                path = "/curriculum/grade/subjects"
+                var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+                var result = nodes.iterateNext();
+
+                while (result) {
+
+                    var sub = result.childNodes[0].nodeValue
+                    strdropdown[strdropdown.length] = new Option(sub, sub);
+                    result = nodes.iterateNext();
+                }
+            }
+
+            else {
+                document.getElementById("gradetxt").style.visibility = "visible";
+                document.getElementById("gradelb").style.visibility = "visible";
+                grdropdown[grdropdown.length] = new Option("select", "select")
+                grdropdown[grdropdown.length] = new Option("K", "K")
+                var count;
+                var total;
+                if (areasel == "Mathematics") {
+                    total = "9"
+                }
+                else {
+                    total = "13"
+                }
+
+                for (count = 1; count < total; count++) {
+
+                    gradedd[grdropdown.length] = new Option(count, count)
+                }
+            }
+
+        }
+    </script>
+    <script type="text/javascript">
+        function popstr() {
+            var areasel = areadd.options[areadd.selectedIndex].value;
+            var gr = gradedd.options[gradedd.selectedIndex].value;
+
+            var strdropdown = document.getElementById("stranddd");
+            strdropdown.innerHTML = "";
+
+            xml = loadXMLDoc("resources/core/" + areasel + "/corecur.xml");
+            path = "/curriculum/grade/subjects[@id='" + gr + "']";
+
+            var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+            var result = nodes.iterateNext();
+
+            while (result) {
+
+                var sub = result.childNodes[0].nodeValue
+                strdropdown[strdropdown.length] = new Option(sub, sub);
+                result = nodes.iterateNext();
+            }
+
+        }
+    </script>
+    
+<script>
+    function popout() {
+
+        var areasel = areadd.options[areadd.selectedIndex].value;
+        var str = stranddd.options[stranddd.selectedIndex].value;
+        var gr = gradedd.options[gradedd.selectedIndex].value;
+
+
+
+
+        xml = loadXMLDoc("resources/core/" + areasel + "/" + str + "/" + gr + ".xml");
+
+        //path = "/LearningStandards/LearningStandardItem/StatementCodes/StatementCode"
+        path = "/LearningStandards/LearningStandardItem/Statements/Statement"
+        var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+        var result = nodes.iterateNext();
+        var txt = "<table border='1'><tr><th>Code</th><th>Standard</th></tr>";
+
+        while (result) {
+            ind = "Grade " + gr + " " + str;
+            //ind = result.parentNode.NextSibling.childNodes[0].nodeValue;
+            var over = result.childNodes[0].nodeValue;
+            txt = txt + "<tr><td>" + ind + "</td><td>" + over + "</td></tr>"
+            result = nodes.iterateNext();
+        }
+
+        txt = txt + "<tr><td>citation</td><td>Adapted from Common Core State Standards XML files @ www.corestandards.org</td></tr></table></table>"
+        document.getElementById('outtable').innerHTML = txt;
+    }
+</script>
 	<div data-role="panel" data-position="left" data-theme="a" data-display="push" id="left_panel">
 		<ul data-role="listview" data-inset="false" data-theme="a">
 			<li><div style="text-align: center;"><img src="assets/img/logo.png" alt="Logo"></div></li>
