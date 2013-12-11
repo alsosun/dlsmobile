@@ -530,7 +530,9 @@
     <Content Include="resources\ont\grade_k_Mathematics.xml" />
     <Content Include="resources\ont\grade_k_Personal and Soc.xml" />
     <Content Include="resources\ont\grade_k_Science and Tech.xml" />
-    <Content Include="resources\ont\oncur.xml" />
+    <Content Include="resources\ont\oncur.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="resources\sask\xml\apprenticeship math_education_10.xml" />
     <Content Include="resources\sask\xml\apprenticeship math_education_20.xml" />
     <Content Include="resources\sask\xml\apprenticeship math_education_30.xml" />

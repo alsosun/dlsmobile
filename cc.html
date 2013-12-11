@@ -19,45 +19,87 @@
     <script type="text/javascript" src="assets/js/loadxmlout.js"></script>
     <script type="text/javascript" src="assets/js/loadxmldoc.js"></script>
     <script type="text/javascript">
-        function popsub() {
-
-            var gr = document.getElementById("gradedd").options[gradedd.selectedIndex].value;
-            var dropdown = document.getElementById("subdd");
+        function selchk() {
+            
+            var areasel = areadd.options[areadd.selectedIndex].value;
+            // clear grade and strand
+                        
+            document.getElementById("stranddd").innerHTML = "";
+            var grdropdown = document.getElementById("gradedd");
+            grdropdown.innerHTML = ""
             var strdropdown = document.getElementById("stranddd");
-            dropdown.innerHTML = "";
-            strdropdown.innerHTML = "";
-            dropdown[dropdown.length] = new Option("select subject", "select subject");
-            xml = loadXMLDoc("resources/ont/oncur.xml");
-            path = "/curriculum/grade/subjects[@id='" + gr + "']"
-            // code for IE
-            if (window.ActiveXObject) {
-                var nodes = xml.selectNodes(path);
-
-                for (i = 0; i < nodes.length; i++) {
-                    ddlist[0] = nodes[i].childNodes[0].nodeValue;
-                    dropdown[dropdown.length] = new Option(ddlist[i], ddlist[i]);
-
-                }
-            }
-                // code for Mozilla, Firefox, Opera, etc.
-            else if (document.implementation && document.implementation.createDocument) {
+            // test for HS           
+            var patt = new RegExp("HS");
+            var res = patt.test(areasel);
+            
+            if (res == true) {
+                
+                
+                document.getElementById("gradetxt").style.visibility = "hidden";
+                document.getElementById("gradelb").style.visibility = "hidden";
+                xml = loadXMLDoc("resources/core/" + areasel + "/corecur.xml");
+                path = "/curriculum/grade/subjects"
                 var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
                 var result = nodes.iterateNext();
 
                 while (result) {
 
                     var sub = result.childNodes[0].nodeValue
-                    dropdown[dropdown.length] = new Option(sub, sub);
+                    strdropdown[strdropdown.length] = new Option(sub, sub);
                     result = nodes.iterateNext();
                 }
             }
 
+            else  {
+                document.getElementById("gradetxt").style.visibility = "visible";
+                document.getElementById("gradelb").style.visibility = "visible";
+                gradedd[grdropdown.length] = new Option("select", "select")
+                gradedd[grdropdown.length] = new Option("K", "K")
+                var count;
+                var total;
+                if (areasel == "Mathematics") {
+                    total = "9"
+                }
+                else {
+                    total = "13"
+                }
+
+                for (count = 1; count < total; count++) {
+                    
+                    gradedd[grdropdown.length] = new Option(count, count)
+                }
+            }
+            
+            
+        }
+    </script>
+    <script type="text/javascript">
+        function popstr() {
+            var areasel = areadd.options[areadd.selectedIndex].value;
+            var gr = gradedd.options[gradedd.selectedIndex].value;
+            
+            var strdropdown = document.getElementById("stranddd");
+            strdropdown.innerHTML = "";
+            
+            xml = loadXMLDoc("resources/core/" + areasel + "/corecur.xml");
+            path = "/curriculum/grade/subjects[@id='" + gr + "']";
+           
+            var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+            var result = nodes.iterateNext();
+
+                while (result) {
+
+                    var sub = result.childNodes[0].nodeValue
+                    strdropdown[strdropdown.length] = new Option(sub, sub);
+                    result = nodes.iterateNext();
+                }
+         
         }
     </script>
     <script>
         function popstrand() {
             var gr = gradedd.options[gradedd.selectedIndex].value
-            var sb = subdd.options[subdd.selectedIndex].value
+            var areasel = areadd.options[areadd.selectedIndex].value
             var dropdown = document.getElementById("stranddd");
             dropdown.innerHTML = "";
             dropdown[dropdown.length] = new Option("select strand", "select strand");
@@ -125,8 +167,6 @@
         document.getElementById('outtable').innerHTML = txt;
     }
 </script>
-
-
 </head>
 <body>
 <div data-role="page">
@@ -200,38 +240,39 @@
 	<div data-role="content">
 		<div style="text-align:center" class="container">
 			<h1>Subject Areas</h1>
-                <p><select id="subdd" onchange="popstrand()">
-             <option>select subject</option>
-             <option>Language Arts</option>
+                <p><select id="areadd" onchange="selchk()">
+                <option>select subject</option>
+                <option>Language Arts</option>
                 <option>Mathematics</option>
                 <option>HS Algebra</option>
                 <option>HS Functions</option>
                 <option>HS Geometry</option>
                 <option>HS Number and Quantity</option>
                 <option>HS Statistics and Probability</option>   
-    </select></p>
-            <h1>Grade</h1>
-				<p><select id="gradedd" onchange="popsub()">
-        <option></option>
-            <option>K</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
+                </select></p>
+            <h1 id="gradelb">Grade</h1>
+				<p id="gradetxt"><select id="gradedd" onchange="popstr()">
+                <option>select grade</option>
+                <!--<option>K</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>--> 
     </select></p>
             
                 
             <h1>Strand</h1>
                 <p><select id="stranddd" onchange="popout()">
-             <option>select strand</option>   
+             <option>select strand</option>
+               
     </select></p>	
 		</div>
         <div id="outtable"></div>
