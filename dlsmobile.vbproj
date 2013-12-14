@@ -546,7 +546,6 @@
     <Content Include="resources\sask\xml\welding a_education_30.xml" />
     <Content Include="resources\sask\xml\welding b_education_30.xml" />
     <Content Include="saskcur.html" />
-    <Content Include="xpath.html" />
     <Content Include="cache.manifest" />
     <None Include="resources\sask\book.dls" />
     <Content Include="resources\sask\xml\arts_education_1.xml" />
