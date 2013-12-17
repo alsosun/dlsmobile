@@ -545,6 +545,7 @@
     <Content Include="resources\sask\xml\graphic arts_education_30.xml" />
     <Content Include="resources\sask\xml\welding a_education_30.xml" />
     <Content Include="resources\sask\xml\welding b_education_30.xml" />
+    <Content Include="rubric.aspx" />
     <Content Include="saskcur.html" />
     <Content Include="cache.manifest" />
     <None Include="resources\sask\book.dls" />
@@ -697,6 +698,13 @@
     <Compile Include="ont.aspx.vb">
       <DependentUpon>ont.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rubric.aspx.designer.vb">
+      <DependentUpon>rubric.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rubric.aspx.vb">
+      <DependentUpon>rubric.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="sask.aspx.designer.vb">
       <DependentUpon>sask.aspx</DependentUpon>

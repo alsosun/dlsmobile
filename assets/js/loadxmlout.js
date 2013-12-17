@@ -10,13 +10,13 @@
             
             //if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 
-                var txt = "<table border='1'><tr><th>Grade</th><th>Number</th></tr>";
+            var txt = "<table border='1'><tr><th>add to rubric</th><th>Grade</th><th>Number</th></tr>";
                 x = xmlhttp.responseXML.documentElement.getElementsByTagName("outcome");
                     
                 
                 
                 for (i = 0; i < x.length; i++) {
-                    txt = txt + "<tr>";
+                    txt = txt + "<tr><td><form><input type='checkbox'></input></td>"; 
                     xx = x[i].getElementsByTagName("identifier");
                     
                     {
@@ -38,7 +38,7 @@
                     }
                     txt = txt + "</tr>";
                 }
-                txt = txt + "<tr><td>citation</td><td>Adapted from Saskatchewan Ministry of Education @ www.curriculum.gov.sk.ca</td></tr></table>";
+                txt = txt + "<tr><td> </td><td>citation</td><td>Adapted from Saskatchewan Ministry of Education @ www.curriculum.gov.sk.ca</td></tr></table>";
                 document.getElementById('outtable').innerHTML = txt;
                 
             //}

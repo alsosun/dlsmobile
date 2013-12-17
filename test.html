@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Saskatchewan</title>
+    <title>Rubric</title>
 	<meta name="viewport" content="width=device-width, initial-scale=0.85" />
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
 	<link rel="stylesheet" href="assets/css/style.css" />
@@ -16,6 +16,7 @@
 	<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="assets/js/code.photoswipe.jquery-3.0.5.min.js"></script>
 	<script src="assets/js/custom.js"></script>
+    
     <script type="text/javascript" src="assets/js/loadxmlout.js"></script>
     <script type="text/javascript" src="assets/js/loadxmldoc.js"></script>
     <script type="text/javascript">
@@ -43,15 +44,13 @@
                 var result = nodes.iterateNext();
 
                 while (result) {
-                    //document.getElementById('outtable').innerHTML = result.childNodes[0].nodeValue 
-                    //document.write(result.childNodes[0].nodeValue);
-                    //document.write("<br>");
+
                     var sub = result.childNodes[0].nodeValue
                     dropdown[dropdown.length] = new Option(sub, sub);
                     result = nodes.iterateNext();
                 }
             }
-
+            $("#next").show();
         }
     </script>
 <script>
@@ -59,58 +58,10 @@
     function popout() {
         var gr = gradedd.options[gradedd.selectedIndex].value
         var sb = subdd.options[subdd.selectedIndex].value
-        var xml = loadXMLDoc("resources/sask/xml/" + sb + "_education_" + gr + ".xml")
-        //var xml = loadXMLDoc("resources/sask/xml/Arts_education_1.xml")
-        alert("load")
-        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-            alert("chome")
-        }
-        else {// code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            alert("ie")
-        }
-
-        xmlhttp.onreadystatechange = function () {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                alert("start")
-                var txt = "<table border='1'><tr><th>Grade</th><th>Number</th></tr>";
-                x = xml.documentElement.getElementsByTagName("outcome");
-                for (i = 0; i < x.length; i++) {
-                    txt = txt + "<tr>";
-                    xx = x[i].getElementsByTagName("identifier");
-                    {
-                        try {
-                            txt = txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
-                        }
-                        catch (er) {
-                            txt = txt + "<td> error </td>";
-                        }
-                    }
-                    xx = x[i].getElementsByTagName("outcome_text");
-                    {
-                        try {
-                            txt = txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
-                        }
-                        catch (er) {
-                            txt = txt + "<td> error </td>";
-                        }
-                    }
-                    txt = txt + "</tr>";
-                }
-                txt = txt + "</table>";
-                document.getElementById('outtable').innerHTML = txt;
-                alert(txt);
-            }
-
-        }
-
-        xmlhttp.open("GET", url, true);
-        xmlhttp.send();
-        alert("but this works")
+        loadXMLout("resources/sask/xml/" + sb + "_education_" + gr + ".xml")
     }
-    
 </script>
+
 </head>
 <body>
     <div data-role="page">
@@ -169,7 +120,7 @@
 				<span class="menu-btn-background"></span>
 				<span class="counter-header hidden accent-color" style="color: #ffffff;"></span>
 			</a>
-			<span class="page_title">Saskatchewan Curriculum</span>
+			<span class="page_title">Rubric</span>
 			<a style="float: right; border: none;" class="header_button" href="#" data-inline="true" data-rel="back" data-role="button" data-corners="false" data-theme="c">
 				<img style="width: 100%; height: 100%;" src="assets/img/back.png" alt="Back" />
 				<span class="btn-background"></span>
@@ -182,10 +133,10 @@
 		</div>
 	</div>
     <div><form>
-    Select Grade
+    
     <select id="gradedd" onchange="popsub()">
-        <option></option>
-            <option>K</option>
+        <option>select grade</option>
+            <option>k</option>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -202,10 +153,44 @@
     <select id="subdd" onchange="popout()">
              <option>select subject</option>   
     </select>
-</form></div>
+</form>
+ </div>
     <div id="outtable">
 
- </div>
+ </div>   
+        <div id="next" hidden="hidden"><button id="add">Add items to Rubric</button>
+            <script>
+                $('#add').on('click', function () {
+                    var txt;
+                    $('input:checked').each(function (i) {
+                        i++;
+                        $this = $(this).closest("tr");
+                        var code = $this.find('td').eq(1).text();
+                        var out = $this.find('td').eq(2).text();
+                        //alert(code);
+                        //alert(out);
+                        
+                        txt = txt + "<table border='1' style='width:100%'><tr><th style='width:5%'>ID</th><th style='width:40%'>Outcome</th>\
+                        <th style='width:5%'>R</th><th style='width:10%'>Level 1</th><th style='width:10%'>Level 2</th><th style='width:20%'>Level 3</th>\
+                        <th style='width:10%'>Level 4</th></tr><tr><td>" + code + "</td><td>" + out + "</td><td></td><td>Beginning</td>\
+                        <td>Progressing</td><td>Meeting</td><td>Established</td></tr></table>\
+                        <form><input type='range' name='"+ code + "' id='" + code + "' data-highlight='true' min='0' max='100' value='50' /></form>";
+
+                       
+                       
+
+                    });
+                    //$("#rubric").append(txt).trigger("create");
+                    var rubric = txt;
+                    localStorage.setItem('rubric', rubric);
+                    window.location.href = "rubric.aspx";
+                });
+            </script>
+        </div>
+     
 </div>
+    
+
+
 </body>
 </html>

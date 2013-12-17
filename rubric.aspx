@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="rubric.aspx.vb" Inherits="dlsmobile.rubric" %>
+
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Rubric</title>
@@ -91,24 +93,80 @@
 		</div>
 	</div>
  
-        
+   <div><h2>Rubric</h2>
+       <select id="student">
+           <option>Sally</option>
+           <option>Jimmy</option>
+           <option>Freddy</option>
+       </select>
+       
+   </div>     
      <div id="rubric"> 
-         <h2>Rubric</h2>  
+          
+          
       <script type="text/javascript" charset="utf-8">
 
           function onDeviceReady() {
-              alert("run")
+              
 
-              var value = window.localStorage.getItem("rubric");
-              $("#rubric").html(value);//.trigger("create");
-              //$('#rubric').html(localStorage.getItem('rubric')).trigger("create");
-
-              //localStorage.clear()
+              var value = window.localStorage.getItem('rubric');
+              $("#rubric").append(value).trigger("create");
+              
+              var rep = "<table id='rubtbl' border='1' style='width:100%'><tbody><tr><th>Student</th>";
+              $.mobile.activePage.find('[type=number]')
+                  .each(function () {
+                      var self = this;
+                      var code = $(self).attr("name");
+                      rep = rep + "<th>" + code + "</th>"
+                  });
+              rep = rep + "</tr></tbody></table>"
+              $("#report").append(rep).trigger("create")
           }
 
           window.onload = onDeviceReady;
     </script>
      </div>
+    <div>
+        <button id="submitbtn">Submit</button>
+        <script>
+            $("#submitbtn")
+     .click(function () {
+         slide();
+     });
+
+            function slide() {
+                var count = 0;
+                //var arr = [];
+                var sdnt = $("#student option:selected").text();
+                var rep = "<tr><td>" + sdnt + "</td>"
+                
+                $.mobile.activePage.find('[type=number]')
+                    .each(function () {
+                        var self = this;
+                        var code = $(self).attr("name");
+                        var score = $(self).val();
+                        //var obj = {
+                        //    code: $(self).attr("name"),
+                        //    score: $(self).val()
+                        //};
+                        //arr.push(obj);
+                        //count += 1;
+                        //alert(sdnt + code + score)
+                        rep = rep + "<td>"+score+"</td>"
+                    });
+
+                rep = rep + "</tr>"
+                
+                $("#rubtbl tbody:last").append(rep);//.trigger("create")
+               }
+            
+            </script>
+        
+    </div>
+        <div id="report">
+            <h2>Class Report</h2>
+        </div>
   </div>
 </body>
 </html>
+
