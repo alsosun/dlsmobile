@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Rubric</title>
-	<meta name="viewport" content="width=device-width, initial-scale=0.85" />
+	<meta name="viewport" content="width=device-width, initial-scale=0.85; userscalable=yes;"  />
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
 	<link rel="stylesheet" href="assets/css/style.css" />
 	<link rel="stylesheet" href="assets/css/owl.carousel.css" />
@@ -103,31 +103,36 @@
    </div>     
      <div id="rubric"> 
           
-          
       <script type="text/javascript" charset="utf-8">
 
           function onDeviceReady() {
               
-
               var value = window.localStorage.getItem('rubric');
               $("#rubric").append(value).trigger("create");
               
-              var rep = "<table id='rubtbl' border='1' style='width:100%'><tbody><tr><th>Student</th>";
+              var rep = "<table id='rubtbl' class='rubrictable' style='width:100%'><thead><tr><td>Student</td>";
+              //reads slider #
+              var i = 1
               $.mobile.activePage.find('[type=number]')
                   .each(function () {
                       var self = this;
                       var code = $(self).attr("name");
-                      rep = rep + "<th>" + code + "</th>"
+                      rep = rep + "<td>" + code + "</td>";
+                      i++;
                   });
-              rep = rep + "</tr></tbody></table>"
+              
+              rep = rep + "</tr></thead><tbody><tr><td colspan='"+i+"'></td></tr></tbody></table>"
               $("#report").append(rep).trigger("create")
           }
 
           window.onload = onDeviceReady;
     </script>
+         
+         
+         
      </div>
     <div>
-        <button id="submitbtn">Submit</button>
+        <a href="#popupDialog" id="submitbtn" data-transition="pop" data-role="button" data-rel="popup">Submit</a>
         <script>
             $("#submitbtn")
      .click(function () {
@@ -145,19 +150,15 @@
                         var self = this;
                         var code = $(self).attr("name");
                         var score = $(self).val();
-                        //var obj = {
-                        //    code: $(self).attr("name"),
-                        //    score: $(self).val()
-                        //};
-                        //arr.push(obj);
-                        //count += 1;
-                        //alert(sdnt + code + score)
+                        
                         rep = rep + "<td>"+score+"</td>"
                     });
 
                 rep = rep + "</tr>"
                 
                 $("#rubtbl tbody:last").append(rep);//.trigger("create")
+                
+                $("#popupDialog").popup("open");
                }
             
             </script>
@@ -165,8 +166,52 @@
     </div>
         <div id="report">
             <h2>Class Report</h2>
+            
         </div>
+        <div id="export">
+            <button>export</button>
+        </div>
+    <div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+    <div data-role="header" data-theme="a" class="ui-corner-top">
+        <h1>Alert</h1>
+    </div>
+   <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="text-align:center">
+        
+        <p>Student data added. Scroll down to view.</p>
+        <a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="c">OK</a>
+        
+    </div>
+   </div>
+<div data-role="popup" id="pop" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+    <div data-role="header" data-theme="a" class="ui-corner-top">
+    
+        <h1>Change Text</h1>
+    </div>
+    <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="text-align:center">
+        
+        <textarea id="txt" cols="20" rows="8" data-mini="true"></textarea>
+        <a href="#" id="close" data-role="button" data-inline="true" data-rel="back" data-theme="c">OK</a>
+        </div>
+</div>
+        
   </div>
+   <script>
+     var org;
+     
+     $(document).on('click', 'td', function () {
+           $('#pop').popup('open');
+           var cell = $(this).text();
+           org = $(this);
+           $('#txt').val(cell)
+
+       });
+
+       $('#close').on('click', function (event) {
+           var newTXT = $('#txt').val()
+           //alert(newTXT) 
+           $(org).html(newTXT)
+       });
+    </script> 
 </body>
 </html>
 

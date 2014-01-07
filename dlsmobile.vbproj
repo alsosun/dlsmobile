@@ -81,6 +81,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\jquery.mobile-1.3.2.min.css" />
     <Content Include="assets\css\owl.carousel.css" />
     <Content Include="assets\css\owl.theme.css" />
     <Content Include="assets\css\photoswipe.css" />
@@ -206,6 +207,7 @@
     <Content Include="assets\img\logo%402x.png" />
     <Content Include="assets\img\logo%402xbk.png" />
     <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\logodls.png" />
     <Content Include="assets\img\mail%402x.png" />
     <Content Include="assets\img\mail.png" />
     <Content Include="assets\img\menu%402x.png" />
@@ -263,26 +265,20 @@
     <Content Include="assets\js\jstorage.js" />
     <Content Include="assets\js\klass.min.js" />
     <Content Include="assets\js\loadxmlout.js" />
+    <Content Include="assets\js\myjs.js" />
     <Content Include="assets\js\owl.carousel.min.js" />
     <Content Include="assets\js\retina-1.1.0.js" />
     <Content Include="assets\js\retina.js" />
     <Content Include="assets\js\loadxmldoc.js" />
     <Content Include="assets\js\wgxpath.install.js" />
-    <Content Include="blog-single-1.html" />
-    <Content Include="blog-single-2.html" />
-    <Content Include="blog-single-3.html" />
-    <Content Include="blog-single-4.html" />
-    <Content Include="blog-single-5.html" />
     <Content Include="blog.html" />
-    <Content Include="cc.aspx" />
     <Content Include="cc.html" />
+    <Content Include="classes.html" />
     <Content Include="cur.html" />
-    <Content Include="cursask.aspx" />
-    <Content Include="default.html" />
+    <Content Include="Default.html" />
     <Content Include="features.html" />
     <Content Include="index.html" />
     <Content Include="information.html" />
-    <Content Include="ont.aspx" />
     <Content Include="ont.html" />
     <Content Include="oops.html" />
     <Content Include="planners.html" />
@@ -652,27 +648,12 @@
     <Content Include="resources\sask\xml\welding_education_10.xml" />
     <Content Include="resources\sask\xml\welding_education_20.xml" />
     <Content Include="resources\sask\xml\wellness_education_10.xml" />
-    <Content Include="sask.aspx" />
     <Content Include="sask.html" />
     <Content Include="test.html" />
     <Content Include="video.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cc.aspx.designer.vb">
-      <DependentUpon>cc.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="cc.aspx.vb">
-      <DependentUpon>cc.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="cursask.aspx.designer.vb">
-      <DependentUpon>cursask.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="cursask.aspx.vb">
-      <DependentUpon>cursask.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -692,25 +673,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ont.aspx.designer.vb">
-      <DependentUpon>ont.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ont.aspx.vb">
-      <DependentUpon>ont.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="rubric.aspx.designer.vb">
       <DependentUpon>rubric.aspx</DependentUpon>
     </Compile>
     <Compile Include="rubric.aspx.vb">
       <DependentUpon>rubric.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="sask.aspx.designer.vb">
-      <DependentUpon>sask.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="sask.aspx.vb">
-      <DependentUpon>sask.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

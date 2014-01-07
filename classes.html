@@ -1,0 +1,456 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Daily Rubric</title>
+	<meta name="viewport" content="width=device-width, initial-scale=0.85" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+   <!-- <link rel="stylesheet" href="assets/css/jquery.mobile-1.3.2.min.css" />-->
+	<link rel="stylesheet" href="assets/css/style.css" />
+	<link rel="stylesheet" href="assets/css/owl.carousel.css" />
+	<link rel="stylesheet" href="assets/css/owl.theme.css" />
+	<link rel="stylesheet" href="assets/css/photoswipe.css" />
+	<script type="text/javascript" src="assets/js/klass.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+	<script type="text/javascript" src="assets/js/jstorage.js"></script>
+	<script type="text/javascript" src="assets/js/retina.js"></script>
+	<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="assets/js/code.photoswipe.jquery-3.0.5.min.js"></script>
+	<script type="text/javascript" src="assets/js/custom.js"></script>
+    <script type="text/javascript" src="assets/js/loadxmlout.js"></script>
+    <script type="text/javascript" src="assets/js/loadxmldoc.js"></script>
+    <script type="text/javascript" src="assets/js/myjs.js"></script>
+
+
+</head>
+<body>
+<div data-role="page" id="classes">
+	<div data-role="panel" data-position="left" data-theme="a" data-display="push" id="left_panel">
+		<ul data-role="listview" data-inset="false" data-theme="a">
+			<li><div style="text-align: center;"><img src="assets/img/logo.png" alt="Logo" /></div></li>
+			<li><a data-transition="slide" href="index.html"><img src="assets/img/menu-icons/home.png" alt="Home" class="ui-li-icon" />Home</a></li>
+			<li data-role="collapsible" data-inset="false" data-theme="a" data-content-theme="c" data-iconpos="right">
+                <h4>Rubrics</h4>
+                <ul data-role="listview" data-inset="false" data-theme="c">
+                 <li id="rubcur1"><a data-transition="slide" href="sask.html"><img src="assets/img/menu-icons/news.png" alt="Curriculum" class="ui-li-icon" />Saskatchewan</a></li>
+                 <li id="rubcur2"><a data-transition="slide" href="ont.html"><img src="assets/img/menu-icons/news.png" alt="Curriculum" class="ui-li-icon" />Ontario</a></li>
+                 <li id="rubcur3"><a data-transition="slide" href="cc.html"><img src="assets/img/menu-icons/news.png" alt="Curriculum" class="ui-li-icon" />Common Core</a></li>
+                 <li id="rubcur4"><a data-transition="slide" href="general.html"><img src="assets/img/menu-icons/news.png" alt="Curriculum" class="ui-li-icon" />All Others</a></li>
+                </ul>
+			</li>
+            <li id="section" class="countable"><a data-transition="slide" href="classes.html"><img src="assets/img/menu-icons/news.png" alt="Classes" class="ui-li-icon" />Classes<span class="ui-li-count hidden accent-color" /></span></a></li>
+
+            <li id="menu_recipes" class="countable"><a data-transition="slide" data-count="2" href="planners.html"><img src="assets/img/menu-icons/star.png" alt="Planners" class="ui-li-icon" />Planners<span class="ui-li-count hidden accent-color"></span></a></li>
+			<li id="menu_gallery" class="countable"><a data-transition="slide" data-count="0" href="features.html"><img src="assets/img/menu-icons/information.png" alt="Features" class="ui-li-icon" />Features<span class="ui-li-count hidden accent-color"></span></a></li>
+            <li id="menu_video" class="countable"><a data-transition="slide" data-count="2" href="video.html"><img src="assets/img/menu-icons/video.png" alt="Video" class="ui-li-icon" />Tutorials<span class="ui-li-count hidden accent-color"></span></a></li>
+			<li id="menu_blog" class="countable"><a data-transition="slide" data-count="3" href="blog.html"><img src="assets/img/menu-icons/blog.png" alt="Blog" class="ui-li-icon" />News<span class="ui-li-count hidden accent-color"></span></a></li>
+            <li><a data-transition="slide" href="information.html"><img src="assets/img/menu-icons/information.png" alt="Information" class="ui-li-icon" />Contact</a></li>
+		</ul>
+		<div style="position: relative; top: 15px;">
+			<p>Socialize</p>
+			<a href="https://twitter.com/DLS_Canada"><img src="assets/img/panel/twitter.png" alt="Twitter" /></a>
+			<a href="https://www.facebook.com/Digitallearnersolutions"><img src="assets/img/panel/facebook.png" alt="Facebook" /></a>
+			<a href="https://plus.google.com/101568684619478372786"><img src="assets/img/panel/google.png" alt="Google+" /></a>
+			<a href="https://www.youtube.com/user/DLSolutions2013"><img src="assets/img/panel/youtube.png" alt="YouTube" /></a>
+		</div>
+	</div>
+<!--	<div data-role="panel" data-theme="a" data-position="right" data-display="push" id="right_panel">
+		<div style="text-align: center;">
+			<h4 style="margin-top: 0px;">Share this page on:</h4>
+			<div class="panel-social-wrap">
+				<a class="facebook_share_link" title="Share link on Facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://www.digitallearnersolutions.com/m/&p[images][0]=&p[title]=Unit%20and%20Rubric%20Planner&p[summary]=" rel="nofollow">
+					<div class="panel-social panel-social-twitter accent-color">
+						<img src="assets/img/facebook.png" alt="Facebook" />
+					</div>
+				</a>
+				<div class="panel-social-counter facebook_number"></div>
+			</div>
+			<div class="panel-social-wrap">
+				<a class="twitter_share_link" title="Share link on Twitter" target="_blank" href="http://twitter.com/home?status=All%20teachers%20need%20to%20see%20this!%20http://www.digitallearnersolutions.com/m/%20" rel="nofollow">
+					<div class="panel-social panel-social-facebook accent-color">
+						<img src="assets/img/twitter.png" alt="Twitter" />
+					</div>
+				</a>
+				<div class="panel-social-counter twitter_number"></div>
+			</div>
+			<div class="panel-social-wrap">
+				<a class="google_share_link" title="Share link on Google+" target="_blank" href="https://plus.google.com/share?url=http://www.digitallearnersolutions.com/m/%20" rel="nofollow">
+					<div class="panel-social panel-social-google accent-color">
+						<img src="assets/img/google.png" alt="Google+" />
+					</div>
+				</a>
+				<div class="panel-social-counter google_number"></div>
+			</div>
+		</div>
+	</div>-->
+	<div id="header" data-role="header" data-position="fixed" data-theme="c">
+		<div class="header_wrapper">
+			<a style="border-left: none;" class="header_button" href="#left_panel" data-inline="true" data-role="button" data-corners="false" data-theme="c">
+				<img class="header-btn-image" style="width: 100%; height: 100%;" src="assets/img/menu.png" alt="Menu" />
+				<span class="menu-btn-background"></span>
+				<span class="counter-header hidden accent-color" style="color: #ffffff;"></span>
+			</a>
+			<span class="page_title">Manage Classes</span>
+			<a style="float: right; border: none;" class="header_button" href="#" data-inline="true" data-rel="back" data-role="button" data-corners="false" data-theme="c">
+				<img style="width: 100%; height: 100%;" src="assets/img/back.png" alt="Back" />
+				<span class="btn-background"></span>
+			</a>
+			<!--<a style="float: right;" class="header_button" href="#right_panel" data-inline="true" data-role="button" data-corners="false" data-theme="c">
+				<img style="width: 100%; height: 100%;" src="assets/img/share.png" alt="Share" />
+				<span class="btn-background share-btn-background"></span>
+			</a>-->
+			<div style="clear: both"></div>
+		</div>
+	</div>
+ <div data-role="content">
+		<div class="container" style="padding: 0px;">
+			<div id="classmenu">
+                <a href="#popupMenu" data-rel="popup" data-role="button" data-inline="true" data-transition="slideup" data-icon="gear" data-theme="b">Classes Menu</a>
+                    <div data-role="popup" id="popupMenu" data-theme="d">
+                        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+                        <li data-role="divider" data-theme="b">Choose an action</li>
+                        <li><a href="#" id="addclasslink" data-rel="back">Add Class</a></li>
+                        <li><a href="#"id="delclasslink" data-rel="back" >Delete Class</a></li>
+                        <li><a href="#" id="addstlink" data-rel="back" >Add Student</a></li>
+                        <li><a href="#" id="delstlink" data-rel="back" >Delete Student</a></li>
+                        </ul>
+                    </div><!-- pop up -->
+                <div id="currentclasses" style="text-align:center">
+                    <h2>Current Classes</h2>
+                    <form>
+                    <fieldset data-role="controlgroup" data-type="horizontal">
+                        <legend></legend>                        
+                        <select name="select-native-11" id="classes-select">
+                            <option value="#">Class</option>
+                        </select>                       
+                        <select name="select-native-12" id="students-select">
+                            <option value="#">Student</option>                           
+                        </select>                       
+                    </fieldset>
+                    </form>
+                </div>
+			</div>
+            
+            <div id="addclass" style="text-align:center" hidden="hidden">             	
+                
+              <div>
+                  <div style="text-align:center"><h2>Add Classes</h2></div>
+                <div>
+                    <form><input type="text" data-clear-btn="true" name="new-class-name" id="new-class-name" data-inline="true" value="" placeholder="Name of new class (Max 15 characters)"/></form>
+                </div>
+                <div>
+                    <a href="#" id="addclassBtn" data-role="button" data-icon="plus" data-theme="c" data-inline="true">Add a class</a>
+                </div>
+                </div>
+            </div>
+            <div id="delclass" style="text-align:center" hidden="hidden">             	
+                <div>
+                    <div style="text-align:center"><h2>Delete Classes</h2></div>
+                    <div>
+                    <p>Select a class above, then click 'Delete class'. <br />This will also delete all the students in the class. <br />This does not, however, delete any class reports.</p>
+                    </div>               
+                <div>
+                    <a href="#" id="delclassBtn" data-role="button" data-icon="minus" data-theme="c" data-inline="true">delete class</a>
+                </div>
+                </div>
+            </div>
+            
+            <div id="addst" style="text-align:center" hidden="hidden">
+                <h2>Add Students</h2>
+                <p>Select a class above, then enter student's name and click "add student"</p>
+                <div>
+                <div>
+                    <form><input type="text" data-clear-btn="true" name="new-st-name" id="new-st-name" data-inline="true" value="" placeholder="Name of new class (Max 15 characters)"/></form>
+                </div>
+                <a href="#" id="addstBtn" data-role="button" data-icon="plus" data-theme="c" data-inline="true">Add a Student</a>
+                </div>
+			</div>
+           <div id="delst" style="text-align:center" hidden="hidden">
+                <h2>Delete Students</h2>
+               <p>Select a class and student above, and click "delete student". <br />This does not, however, delete any student reports.</p>
+                <div>
+                
+                <a href="#" id="delstBtn" data-role="button" data-icon="minus" data-theme="c" data-inline="true">Delete Selected student</a>
+                </div>
+			</div> 		
+				<div>
+					<h6 class="footer-text">DLS Copyright 2013. All rights reserved</h6>
+				</div>
+                
+   </div><!--container--> 
+ </div><!-- /content --> 
+           <div data-role="popup" id="errorpop" data-overlay-theme="a" data-theme="d" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+                <div data-role="header" data-theme="a" class="ui-corner-top">
+    
+                <h1>Message</h1>
+                </div>
+                <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="text-align:center">
+                <div id="popmessage"></div>
+        
+                <a href="#" id="A2" data-role="button" data-inline="true" data-rel="back" data-theme="c">OK</a>
+                </div> 
+            </div>	<!-- error pop -->
+           <div data-role="popup" id="dialog" data-overlay-theme="a" data-theme="d" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+               <div data-role="header" data-theme="a" class="ui-corner-top">
+    
+                <h1>Message</h1>
+                </div>
+                <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="text-align:center">
+                <div id="yesno"></div>
+        
+                <a href="#" id="dialogyes" data-role="button" data-inline="true" data-rel="back" data-theme="c">Yes</a>
+                <a href="#" id="dialogno" data-role="button" data-inline="true" data-rel="back" data-theme="c">no</a>
+                </div>
+           </div>
+            <div data-role="popup" id="dialog1" data-overlay-theme="a" data-theme="d" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+               <div data-role="header" data-theme="a" class="ui-corner-top">
+    
+                <h1>Message</h1>
+                </div>
+                <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="text-align:center">
+                <div id="yesno1"></div>
+        
+                <a href="#" id="dialogyes1" data-role="button" data-inline="true" data-rel="back" data-theme="c">Yes</a>
+                <a href="#" id="dialogno1" data-role="button" data-inline="true" data-rel="back" data-theme="c">no</a>
+                </div>
+           </div>
+<script type="text/javascript" charset="utf-8">
+    // popup menu
+    //addclasses show
+    $("#addclasslink").on("click", function (event) {
+        $("#addclass").show();
+        $("#delclass").hide();
+        $("#addst").hide();
+        $("#delst").hide();
+    });
+    //delclasses show
+    $("#delclasslink").on("click", function (event) {
+        $("#addclass").hide();
+        $("#delclass").show();
+        $("#addst").hide();
+        $("#delst").hide();
+    });
+    //addst show
+    $("#addstlink").on("click", function (event) {
+        $("#addclass").hide();
+        $("#delclass").hide();
+        $("#addst").show();
+        $("#delst").hide();
+    });
+    //delst show
+    $("#delstlink").on("click", function (event) {
+        $("#addclass").hide();
+        $("#delclass").hide();
+        $("#addst").hide();
+        $("#delst").show();
+    });
+    </script>
+
+    
+
+    <script type="text/javascript" charset="utf-8">
+        //load classes
+        function onClassesReady() {
+            alert("classes");
+            var classdd = $("#classes-select");
+            $("#classes-select").find("option").remove().end();
+            for (i = 1; i < 9; i++) {
+                
+                var classnm = window.localStorage.getItem("class" + i);
+                //add names if none in storage
+                if (window.localStorage.getItem("class" + i) !== null) {
+                    var o = new Option(i, i);
+                    $(o).html(classnm)
+                    classdd.append(o);
+                };               
+            };//end for
+            $("#classes-select").selectmenu("refresh", true);
+          }
+        //window.localStorage.clear();
+        //window.onload = onDeviceReady;
+       </script>
+    
+    <script> //del class
+        $("#delclassBtn").on("click", function (event) {
+            var selclass = $("#classes-select").find(":selected").text();
+            $("#yesno").html("Are you sure you want to delete " + selclass + "?");
+            $("#dialog").popup("open");
+        });
+        $("#dialogyes").on("click", function () {
+            var selclass = "class" + $("#classes-select").find(":selected").val();
+            localStorage.removeItem(selclass);
+            $("#classes-select").find("option").remove().end();
+            delAllStudents(selclass);
+
+            onDeviceReady();
+            onClassSelect();
+            
+            $("#students-select").selectmenu("refresh", true);
+        });
+        $("#dialogno").on("click", function () {
+            
+            return;
+        });
+            
+        
+    </script>
+    <script>
+        //limits length 
+        $("#addclassBtn").click(function () {
+            
+            var classnm = $("#new-class-name").val()
+            var name_length = classnm.length;
+            if (name_length < 1) {
+                $("#popmessage").html("Please give your class a name.")
+                $("#errorpop").popup("open");
+                event.preventDefault();
+                return false;
+            };
+            if (name_length > 15) {
+                classnm = classnm.substring(0, 15);
+            }
+            //checks for name
+            $("#classes-select option").each(function (event) {
+                if (classnm == $(this).text()) {
+                    //$.mobile.changePage("#errordialog", { role: "dialog" });
+                    $("#popmessage").html("You already have a class \n by that name. Try again.")
+                    
+                    $("#errorpop").popup("open");
+                    event.preventDefault();
+                    return false;
+                };
+            });
+            //adds name to first open spot
+            for (i = 1; i < 9; i++) {                
+                if (window.localStorage.getItem("class" + i) === null) {                    
+                    window.localStorage.setItem("class" + i, classnm);
+                    $("#classes-select").find("option").remove().end();
+                    onDeviceReady();
+                    $("#addclass").show();
+                    $("#popmessage").html("Class successfully added. \n Now add students it it.");
+                    $("#errorpop").popup("open");
+                    $("#classes-select").selectmenu("refresh", true);
+                    return;
+                };
+            };
+            
+            $("#popmessage").html("You already have 8 classes.  \n Delete a class if you need to add more.")
+            $("#errorpop").popup("open");
+        });
+    </script>
+    <script> //change of class
+        function onClassSelect() {
+           
+            $("#students-select").find("option").remove().end();                      
+                var classsel = "class" + $("#classes-select").val();
+                var stdd = $("#students-select");
+                for (i = 1; i < 36; i++) {
+                    var stnm = localStorage.getItem(classsel + "st" + i);                   
+                    if (localStorage.getItem(classsel + "st" + i) === null) {                        
+                        continue;
+                    };                       
+                        var o = new Option(i, i);
+                        $(o).html(stnm);
+                        stdd.append(o);
+                }
+                $('#students-select option').sort(NASort).appendTo('#students-select');
+               return false;    
+             }
+</script>
+<script>
+        $("#classes-select").change(function () {
+            if ($("#classes-select").find(":selected").text() === "Class") {
+                event.preventDefault();
+                return false;
+            };
+
+            onClassSelect();            
+            $("#students-select").selectmenu("refresh", true);
+        });
+</script>
+    <script> //add student
+        $("#addstBtn").on("click", function (event) {
+            if ($("#classes-select").find(":selected").text() == "Class") {
+                event.preventDefault();
+                $("#popmessage").html("Please select a class first.");
+                $("#errorpop").popup("open");
+                return false;
+            };
+
+            var classsel = "class" + $("#classes-select").val() + "st";
+            
+            var stnm = $("#new-st-name").val();
+            
+            for (i = 1; i < 36; i++) {
+                if (localStorage.getItem(classsel + i) === null) {                   
+                    localStorage.setItem(classsel + i, stnm);                   
+                    $("#students-select").find("option").remove().end();
+                    onClassSelect();
+
+                    $("#popmessage").html(stnm + " successfully added.");
+                    $("#errorpop").popup("open");
+                    $("#students-select").selectmenu("refresh", true);
+                    return false;
+                };
+            };
+        });
+        
+        
+    </script>
+    <script> //del student
+        $("#delstBtn").on("click", function (event) {
+            
+            var selst = $("#students-select").find(":selected").text();
+            $("#yesno1").html("Are you sure you want to delete " + selst + "?");
+            $("#dialog1").popup("open");
+        });
+        $("#dialogyes1").on("click", function () {
+            var selst = "st" + $("#students-select").find(":selected").val();
+            var selclass = "class" + $("#classes-select").find(":selected").val();
+            
+            
+            localStorage.removeItem(selclass + selst);
+            
+            onClassSelect();
+            $("#students-select").selectmenu("refresh", true);
+        });
+        $("#dialogno1").on("click", function () {
+
+            
+        });
+    </script>
+    <script> //del all students in a class
+        function delAllStudents(classsel) {
+            for (i = 1; i < 36; i++) {
+                var stnm = localStorage.getItem(classsel + "st" + i);
+                
+                localStorage.removeItem(classsel + "st" + i);                                    
+            };                
+        };
+    </script>
+    <script> //alpha sorter
+        function NASort(a, b) {
+            if (a.innerHTML == 'NA') {
+                return 1;
+            }
+            else if (b.innerHTML == 'NA') {
+                return -1;
+            }
+            return (a.innerHTML > b.innerHTML) ? 1 : -1;
+        };
+
+        //$(document).on('pageshow', '[data-role=page]', function () {
+        //    onDeviceReady();
+            
+        //});
+        //$(document).on('pageshow', '#classes', function () {
+            
+        //    onDeviceReady();
+
+        //});
+    </script>
+</div><!-- /page -->
+
+</body>
+</html>
+

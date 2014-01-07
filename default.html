@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head><meta charset="UTF-8">
-	<title>Home</title>
-	<meta name="viewport" content="width=device-width, initial-scale=0.85">
+	<title>Daily Rubric</title>
+		<meta name="viewport" content="width=device-width, initial-scale=0.85">
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
 	<link rel="stylesheet" href="assets/css/style.css" />
 	<link rel="stylesheet" href="assets/css/owl.carousel.css">
@@ -12,33 +12,47 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 	<script type="text/javascript" src="assets/js/jstorage.js"></script>
+    <script type="text/javascript" src="assets/js/myjs.js"></script>
 	<script type="text/javascript" src="assets/js/retina.js"></script>
 	<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="assets/js/code.photoswipe.jquery-3.0.5.min.js"></script>
+    <script type="text/javascript" src="assets/js/loadxmlout.js"></script>
+    <script type="text/javascript" src="assets/js/loadxmldoc.js"></script>
 	<script src="assets/js/custom.js"></script>
+    <script type="text/javascript" src="assets/js/myjs.js"></script>
 </head>
 <body>
-<div data-role="page" id="home">
+<div data-role="page">
 	<div data-role="panel" data-position="left" data-theme="a" data-display="push" id="left_panel">
 		<ul data-role="listview" data-inset="false" data-theme="a">
-			<li><div style="text-align: center;"><img src="assets/img/logo.png" alt="Logo"></div></li>
-			<li><a data-transition="slide" href="index.html"><img src="assets/img/menu-icons/home.png" alt="Home" class="ui-li-icon">Home</a></li>
-			<li id="menu_news" class="countable"><a data-transition="slide" data-count="3" href="cur.html"><img src="assets/img/menu-icons/news.png" alt="Curriculum" class="ui-li-icon">Curriculum<span class="ui-li-count hidden accent-color"></span></a></li>
-			<li id="menu_recipes" class="countable"><a data-transition="slide" data-count="2" href="planners.html"><img src="assets/img/menu-icons/star.png" alt="Planners" class="ui-li-icon">Planners<span class="ui-li-count hidden accent-color"></span></a></li>
-			<li id="menu_gallery" class="countable"><a data-transition="slide" data-count="0" href="features.html"><img src="assets/img/menu-icons/information.png" alt="Features" class="ui-li-icon">Features<span class="ui-li-count hidden accent-color"></span></a></li>
+			<li><div style="text-align: center;"><img src="assets/img/logo.png" alt="Logo" /></div></li>
+			<li><a data-transition="slide" href="index.html"><img src="assets/img/menu-icons/home.png" alt="Home" class="ui-li-icon" />Home</a></li>
+			<li data-role="collapsible" data-inset="false" data-theme="a" data-content-theme="c" data-iconpos="right">
+                <h4>Rubrics</h4>
+                <ul data-role="listview" data-inset="false" data-theme="c">
+                 <li id="rubcur1"><a data-transition="slide" href="sask.html"><img src="assets/img/menu-icons/news.png" alt="Curriculum" class="ui-li-icon">Saskatchewan</a></li>
+                 <li id="rubcur2"><a data-transition="slide" href="sask.html"><img src="assets/img/menu-icons/news.png" alt="Curriculum" class="ui-li-icon">Ontario</a></li>
+                 <li id="rubcur3"><a data-transition="slide" href="sask.html"><img src="assets/img/menu-icons/news.png" alt="Curriculum" class="ui-li-icon">Common Core</a></li>
+                 <li id="rubcur4"><a data-transition="slide" href="sask.html"><img src="assets/img/menu-icons/news.png" alt="Curriculum" class="ui-li-icon">All Others</a></li>  
+                </ul>
+			</li>
+            <li id="section" class="countable"><a data-transition="slide" href="classes.html"><img src="assets/img/menu-icons/news.png" alt="Classes" class="ui-li-icon">Set up Classes<span class="ui-li-count hidden accent-color"></span></a></li>
+            <li id="menu_gallery" class="countable"><a data-transition="slide" data-count="0" href="assessment.html"><img src="assets/img/menu-icons/information.png" alt="Assessment" class="ui-li-icon">Use Rubrics<span class="ui-li-count hidden accent-color"></span></a></li>
+            <li id="menu_recipes" class="countable"><a data-transition="slide" data-count="2" href="planners.html"><img src="assets/img/menu-icons/star.png" alt="Planners" class="ui-li-icon">Planners<span class="ui-li-count hidden accent-color"></span></a></li>
+			
             <li id="menu_video" class="countable"><a data-transition="slide" data-count="2" href="video.html"><img src="assets/img/menu-icons/video.png" alt="Video" class="ui-li-icon">Tutorials<span class="ui-li-count hidden accent-color"></span></a></li>
 			<li id="menu_blog" class="countable"><a data-transition="slide" data-count="3" href="blog.html"><img src="assets/img/menu-icons/blog.png" alt="Blog" class="ui-li-icon">News<span class="ui-li-count hidden accent-color"></span></a></li>
             <li><a data-transition="slide" href="information.html"><img src="assets/img/menu-icons/information.png" alt="Information" class="ui-li-icon">Contact</a></li>
 		</ul>
 		<div style="position: relative; top: 15px;">
 			<p>Socialize</p>
-			<a href="https://twitter.com/DLS_Canada"><img src="assets/img/panel/twitter.png" alt="Twitter"></a>
-			<a href="https://www.facebook.com/Digitallearnersolutions"><img src="assets/img/panel/facebook.png" alt="Facebook"></a>
-			<a href="https://plus.google.com/101568684619478372786"><img src="assets/img/panel/google.png" alt="Google+"></a>
-			<a href="https://www.youtube.com/user/DLSolutions2013"><img src="assets/img/panel/youtube.png" alt="YouTube"></a>
+			<a href="https://twitter.com/DLS_Canada"><img src="assets/img/panel/twitter.png" alt="Twitter" /></a>
+			<a href="https://www.facebook.com/Digitallearnersolutions"><img src="assets/img/panel/facebook.png" alt="Facebook" /></a>
+			<a href="https://plus.google.com/101568684619478372786"><img src="assets/img/panel/google.png" alt="Google+" /></a>
+			<a href="https://www.youtube.com/user/DLSolutions2013"><img src="assets/img/panel/youtube.png" alt="YouTube" /></a>
 		</div>
 	</div>
-	<div data-role="panel" data-theme="a" data-position="right" data-display="push" id="right_panel">
+	<!--<div data-role="panel" data-theme="a" data-position="right" data-display="push" id="right_panel">
 		<div style="text-align: center;">
 			<h4 style="margin-top: 0px;">Share this page on:</h4>
 			<div class="panel-social-wrap">
@@ -66,7 +80,7 @@
 				<div class="panel-social-counter google_number"></div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 	<div id="header" data-role="header" data-position="fixed" data-theme="c">
 		<div class="header_wrapper">
 			<a style="border-left: none;" class="header_button" href="#left_panel" data-inline="true" data-role="button" data-corners="false" data-theme="c">
@@ -74,102 +88,44 @@
 				<span class="menu-btn-background"></span>
 				<span class="counter-header hidden accent-color" style="color: #ffffff;"></span>
 			</a>
-			<span class="page_title">Home</span>
+			<span class="page_title">Curriculum</span>
 			<a style="float: right; border: none;" class="header_button" href="#" data-inline="true" data-rel="back" data-role="button" data-corners="false" data-theme="c">
 				<img style="width: 100%; height: 100%;" src="assets/img/back.png" alt="Back">
 				<span class="btn-background"></span>
 			</a>
-			<a style="float: right;" class="header_button" href="#right_panel" data-inline="true" data-role="button" data-corners="false" data-theme="c">
+			<!--<a style="float: right;" class="header_button" href="#right_panel" data-inline="true" data-role="button" data-corners="false" data-theme="c">
 				<img style="width: 100%; height: 100%;" src="assets/img/share.png" alt="Share">
 				<span class="btn-background share-btn-background"></span>
-			</a>
+			</a>-->
 			<div style="clear: both"></div>
 		</div>
 	</div><!-- /header -->
-	<div id="homepage_content" data-role="content">
-		<div class="page-tagline accent-color">
-			<img src="assets/img/logo.png" alt="Logo">
-		</div>
-		<div id="news_slider" class="owl-carousel owl-active homepage-slider">
-				<div class="item">
-					<a href="features.html">
-						<img src="assets/img/content-images/1.jpg" alt="News 1">
-					</a>
-				</div>
-				<div class="item">
-					<a href="features.html">
-						<img src="assets/img/content-images/2.jpg" alt="News 2">
-					</a>
-				</div>
-				<div class="item">
-					<a href="features.html">
-						<img src="assets/img/content-images/3.jpg" alt="News 3">
-					</a>
-				</div>
-				<div class="item">
-					<a href="features.html">
-						<img src="assets/img/content-images/4.jpg" alt="News 1">
-					</a>
-				</div>
-				<div class="item">
-					<a href="features.html">
-						<img src="assets/img/content-images/5.jpg" alt="News 2">
-					</a>
-				</div>
-				<div class="item">
-					<a href="features.html">
-						<img src="assets/img/content-images/6.jpg" alt="News 3">
-					</a>
-				</div>
-		</div>
-		<hr style="background: #bebebe;">
-		<div class="container">
-			<h3>Unit and Rubric Planner</h3>
-			<p>	Use this mobile companion to your	Unit and Rubric Planner software to quickly browse curriculum documents. Choose your curriculum by openning the menu on the right. You can also view some of the many tutorials available. </p>
-            <p>	If you have not used Unit and Rubric Planner, take a look around. Unit and Rubric planner is an easy to use unit, lesson and rubric planner that follows a backward design method that walks educators through curriculum outcomes, tiered planning, and differentiation of instruction and assessment. It even auto-generates rubrics! </p>
-			
-			<p>	&nbsp;</p>
-			
-			<div class="feature_wrap">
-				<hr style="background: #bebebe; margin: 15px 0px;">
-				<div class="feature accent-color">
-					<img src="assets/img/feature-2.png" alt="Feature 1">
-				</div>
-				<div class="feature_description">
-					
-					<h3>PEDAGOGY</h3>
-					<p>Unit and Rubric Planner is based on current pedagogical research, especially in the areas of backward design, inquiry, differentiation and assessment. Unit and Rubric Planner is easy to use and comes complete with built-in training videos for both the program and backward design curriculum planning.</p>
-				</div>
-				<hr style="background: #bebebe; margin: 15px 0px;">
-			</div>
-			<div class="feature_wrap">
-				<div class="feature accent-color">
-					<img src="assets/img/feature-2.png" alt="Feature 1">
-				</div>
-				<div class="feature_description">
-					<h3>BACKWARD DESIGN &amp; DIFFERNTIATION</h3>
-					<p>Starting with &quot;Big Ideas&quot; or essential questions, teachers can quickly browse and select learning outcomes and indicators. Activities are then planned directly from curricular outcomes. The program also provides tools and strategies for tiered activities and inquiry based learning.</p>
-                    <p>Unit and Rubric Planner&#39;s built in differentiation strategies ensures planning for multi-level classrooms and all learning styles. Student questions and prompts are leveled by Bloom&#39;s Taxonomy, making tiered questioning and activity planning easier and more effective. Teachers can choose from dozens of instructional and assessment strategies, and they can research strategies right from within the program.</p>
-				</div>
-				<hr style="background: #bebebe; margin: 15px 0px;">
-			</div>
-			<div class="feature_wrap">
-				<div class="feature accent-color">
-					<img src="assets/img/feature-3.png" alt="Feature 1">
-				</div>
-				<div class="feature_description">
-					<h3>ASSESSMENT</h3>
-					<p>Unit and Rubric Planner generates instant rubrics based directly on the selected learning outcomes or expectations. The rubrics are designed for &quot;assessment as learning&quot;, not just for &quot;assessment of learning&quot;.</p>
-                    <p>Unit and Rubric Planner also has a powerful yet easy to use Student Success and Individual Education Plan creation tool. The program also includes tips and strategies for planning for all aspects of the learning environment.</p>
-                    <h3 style="text-align:center"><a href="planners.html">Learn more and see it in action</a> </h3>
-				</div>
-				<hr style="background: #bebebe; margin: 15px 0px;">
-			</div>
-		</div>
+	<div data-role="content">
+		<div class="container" style="padding: 0px; text-align:center">
+			<div><img src="assets/img/logodls.png" /></div>
+            <a href="#popupLogin" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="check" data-theme="a" data-transition="pop">Sign in</a>
+            <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+                <form>
+                    <div style="padding:10px 20px; ">
+                        <h3>Please sign in</h3>
+                        <label for="un" class="ui-hidden-accessible">Username:</label>
+                        <input type="text" name="user" id="un" value="" placeholder="username" data-theme="a">
+                        <label for="pw" class="ui-hidden-accessible">Password:</label>
+                        <input type="password" name="pass" id="pw" value="" placeholder="password" data-theme="a">
+                        <button type="submit" data-theme="b" data-icon="check">Sign in</button>
+                    </div>
+                </form>
+            </div>		
+        </div>
+		
+		
 				<div>
 					<h6 class="footer-text">DLS Copyright 2013. All rights reserved</h6>
 				</div>
 			</div><!-- /content -->
 		</div><!-- /page -->
-	</body>
+	
+
+</body>
+    
 </html>

@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Rubric</title>
+<html>
+<head><meta charset="UTF-8" />
+    <title>Saskatchewan Rubrics</title>
 	<meta name="viewport" content="width=device-width, initial-scale=0.85" />
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
 	<link rel="stylesheet" href="assets/css/style.css" />
@@ -16,19 +16,29 @@
 	<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="assets/js/code.photoswipe.jquery-3.0.5.min.js"></script>
 	<script src="assets/js/custom.js"></script>
-    
     <script type="text/javascript" src="assets/js/loadxmlout.js"></script>
     <script type="text/javascript" src="assets/js/loadxmldoc.js"></script>
+    <script type="text/javascript" src="assets/js/myjs.js"></script>
 
 </head>
 <body>
-    <div data-role="page">
+<div data-role="page" id="sask">
 	<div data-role="panel" data-position="left" data-theme="a" data-display="push" id="left_panel">
 		<ul data-role="listview" data-inset="false" data-theme="a">
 			<li><div style="text-align: center;"><img src="assets/img/logo.png" alt="Logo" /></div></li>
 			<li><a data-transition="slide" href="index.html"><img src="assets/img/menu-icons/home.png" alt="Home" class="ui-li-icon" />Home</a></li>
-			<li id="menu_news" class="countable"><a data-transition="slide" data-count="3" href="cur.html"><img src="assets/img/menu-icons/news.png" alt="Curriculum" class="ui-li-icon" />Curriculum<span class="ui-li-count hidden accent-color"></span></a></li>
-			<li id="menu_recipes" class="countable"><a data-transition="slide" data-count="2" href="planners.html"><img src="assets/img/menu-icons/star.png" alt="Planners" class="ui-li-icon" />Planners<span class="ui-li-count hidden accent-color"></span></a></li>
+			<li data-role="collapsible" data-inset="false" data-theme="a" data-content-theme="c" data-iconpos="right">
+                <h4>Rubrics</h4>
+                <ul data-role="listview" data-inset="false" data-theme="c">
+                 <li id="rubcur1"><a data-transition="slide" href="sask.html"><img src="assets/img/menu-icons/news.png" alt="Curriculum" class="ui-li-icon" />Saskatchewan</a></li>
+                 <li id="rubcur2"><a data-transition="slide" href="ont.html"><img src="assets/img/menu-icons/news.png" alt="Curriculum" class="ui-li-icon" />Ontario</a></li>
+                 <li id="rubcur3"><a data-transition="slide" href="cc.html"><img src="assets/img/menu-icons/news.png" alt="Curriculum" class="ui-li-icon" />Common Core</a></li>
+                 <li id="rubcur4"><a data-transition="slide" href="general.html"><img src="assets/img/menu-icons/news.png" alt="Curriculum" class="ui-li-icon" />All Others</a></li>
+                </ul>
+			</li>
+            <li id="section" class="countable"><a data-transition="slide" href="classes.html"><img src="assets/img/menu-icons/news.png" alt="Classes" class="ui-li-icon">Classes<span class="ui-li-count hidden accent-color" /></span></a></li>
+
+            <li id="menu_recipes" class="countable"><a data-transition="slide" data-count="2" href="planners.html"><img src="assets/img/menu-icons/star.png" alt="Planners" class="ui-li-icon" />Planners<span class="ui-li-count hidden accent-color"></span></a></li>
 			<li id="menu_gallery" class="countable"><a data-transition="slide" data-count="0" href="features.html"><img src="assets/img/menu-icons/information.png" alt="Features" class="ui-li-icon" />Features<span class="ui-li-count hidden accent-color"></span></a></li>
             <li id="menu_video" class="countable"><a data-transition="slide" data-count="2" href="video.html"><img src="assets/img/menu-icons/video.png" alt="Video" class="ui-li-icon" />Tutorials<span class="ui-li-count hidden accent-color"></span></a></li>
 			<li id="menu_blog" class="countable"><a data-transition="slide" data-count="3" href="blog.html"><img src="assets/img/menu-icons/blog.png" alt="Blog" class="ui-li-icon" />News<span class="ui-li-count hidden accent-color"></span></a></li>
@@ -42,7 +52,7 @@
 			<a href="https://www.youtube.com/user/DLSolutions2013"><img src="assets/img/panel/youtube.png" alt="YouTube" /></a>
 		</div>
 	</div>
-	<div data-role="panel" data-theme="a" data-position="right" data-display="push" id="right_panel">
+<!--	<div data-role="panel" data-theme="a" data-position="right" data-display="push" id="right_panel">
 		<div style="text-align: center;">
 			<h4 style="margin-top: 0px;">Share this page on:</h4>
 			<div class="panel-social-wrap">
@@ -70,7 +80,7 @@
 				<div class="panel-social-counter google_number"></div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 	<div id="header" data-role="header" data-position="fixed" data-theme="c">
 		<div class="header_wrapper">
 			<a style="border-left: none;" class="header_button" href="#left_panel" data-inline="true" data-role="button" data-corners="false" data-theme="c">
@@ -78,37 +88,342 @@
 				<span class="menu-btn-background"></span>
 				<span class="counter-header hidden accent-color" style="color: #ffffff;"></span>
 			</a>
-			<span class="page_title">Rubric</span>
+			<span class="page_title">Saskatchewan Rubrics</span>
 			<a style="float: right; border: none;" class="header_button" href="#" data-inline="true" data-rel="back" data-role="button" data-corners="false" data-theme="c">
 				<img style="width: 100%; height: 100%;" src="assets/img/back.png" alt="Back" />
 				<span class="btn-background"></span>
 			</a>
-			<a style="float: right;" class="header_button" href="#right_panel" data-inline="true" data-role="button" data-corners="false" data-theme="c">
+			<!--<a style="float: right;" class="header_button" href="#right_panel" data-inline="true" data-role="button" data-corners="false" data-theme="c">
 				<img style="width: 100%; height: 100%;" src="assets/img/share.png" alt="Share" />
 				<span class="btn-background share-btn-background"></span>
-			</a>
+			</a>-->
 			<div style="clear: both"></div>
 		</div>
 	</div>
- 
+ <div data-role="content">
+		<div class="container" style="padding: 0px; text-align:center;">
+						<div id="classmenu" style="text-align:left">
+                <a href="#popupMenu" id="popmenu" data-rel="popup" data-role="button" data-inline="true" data-transition="slideup" data-icon="gear" data-theme="b">Rubric Menu</a>
+                    <div data-role="popup" id="popupMenu" data-theme="d">
+                        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+                        <li data-role="divider" data-theme="b">Choose an action</li>
+                        <li><a href="#" id="newrubriclink" data-rel="back">New Rubric</a></li>
+                        <li><a href="#"id="editrubriclink" data-rel="back" >Edit Rubric</a></li>
+                        <li><a href="#" id="delrubriclink" data-rel="back" >Delete Rubric</a></li>
+                        
+                        </ul>
+                    </div><!-- pop up -->
+    
+			</div><!-- menu -->
+            <div id="start"><h2>Use menu to create, edit or delete rubrics</h2></div>
+            <div id="newrubric" hidden="hidden">
+                <div id="namerubric">
+                    <h2>Create New Rubric</h2>
+                    <p>Give your new rubric a name, and then click 'create'.</p>
+                       <div>
+                        <div>
+                            <form><input type="text" data-clear-btn="true" name="new-rubric-name" id="new-rubric-name" data-inline="true" value="" placeholder="Name of new rubric (Max 15 characters)"/></form>
+                         </div>
+                        <a href="#" id="newrubricBtn" data-role="button" data-icon="plus" data-theme="c" data-inline="true">create</a>
+                       </div> <!-- /name rubric-->
+                </div>
+            </div><!-- /new rubric -->
+            
+            
+            <div id="editrubric" hidden="hidden">
+                <div>
+                        <select id="rubric-select">
+                            <option>select rubric</option>
+                        </select>
+                    </div>
+            </div><!-- /edit -->
+            <div id="delrubric" hidden="hidden">
+                <h2>Delete a rubric</h2>
+                <p>Select a rubric above and click "delete"</p>
+                <a href="#" id="delrubricBtn" data-role="button" data-icon="minus" data-theme="c" data-inline="true">delete</a>
+            </div>    
+            <div id="buildrubric" hidden="hidden">
+                <h2 id="rubriclabel"></h2>    
+                <p>Add curriculum outcomes</p>
+                    <div id="grade_con" style="text-align:center">
+                    <form>
+                        <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                            <legend></legend>
+                            <select name="gradedd" id="gradedd" onchange="popsub()">
+                                <option value="#">Grade</option>
+                                <option>k</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>20</option>
+                                    <option>30</option>
+                            </select>
+    
+                            <select name="subdd" id="subdd">
+                                <option value="#">Subject</option>
         
-     <div id="rubric"> 
-         <h2>Rubric</h2>  
-      <script type="text/javascript" charset="utf-8">
+                            </select>
+                        </fieldset>
+                        </form>
+                      </div><!--grade con-->  
+                    <div id="outtable" hidden="hidden">
 
-          function onDeviceReady() {
-              alert("run")
+                    </div>
+                    <div id="addout" hidden="hidden">
+                        
+                        <a href="#" id="addoutBtn" data-role="button" data-icon="plus" data-theme="c" data-inline="true">Add to rubric</a>
+                    </div>
+                    <div id="rubric">
 
-              var value = window.localStorage.getItem("rubric");
-              $("#rubric").html(value);//.trigger("create");
-              //$('#rubric').html(localStorage.getItem('rubric')).trigger("create");
+                    </div>
+                    <div id="next" hidden="hidden">
+                        <a href="#" id="addmoreBtn" data-role="button" data-icon="plus" data-theme="c" data-inline="true">Add more outcomes</a>
+                        <a href="#" id="clearBtn" data-role="button" data-icon="refresh" data-theme="c" data-inline="true">Start Over</a>
+                        <a href="#" id="doneBtn" data-role="button" data-icon="check" data-theme="c" data-inline="true">Done</a>
+                    </div>
+                </div><!--rubric build-->
 
-              //localStorage.clear()
-          }
+            
+		</div><!-- content -->
+				<div>
+					<h6 class="footer-text">DLS Copyright 2013. All rights reserved</h6>
+				</div><!-- /footer -->
+			</div><!-- /content -->
+               <div data-role="popup" id="errorpop" data-overlay-theme="a" data-theme="d" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+                <div data-role="header" data-theme="a" class="ui-corner-top">
+    
+                <h1>Message</h1>
+                </div>
+                <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="text-align:center">
+                <div id="popmessage"></div>
+        
+                <a href="#" id="A2" data-role="button" data-inline="true" data-rel="back" data-theme="c">OK</a>
+                </div> 
+            </div>	<!-- error pop --> 
+            <div data-role="popup" id="dialog" data-overlay-theme="a" data-theme="d" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+               <div data-role="header" data-theme="a" class="ui-corner-top">
+    
+                <h1>Message</h1>
+                </div>
+                <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="text-align:center">
+                <div id="yesno"></div>
+        
+                <a href="#" id="dialogyes" data-role="button" data-inline="true" data-rel="back" data-theme="c">Yes</a>
+                <a href="#" id="dialogno" data-role="button" data-inline="true" data-rel="back" data-theme="c">no</a>
+                </div>
+           </div>
+    <script>
+        //new rubric show
+        $("#newrubriclink").on("click", function (event) {
+            $("#newrubric").show();
 
-          window.onload = onDeviceReady;
+            $("#editrubric").hide();
+            $("#buildrubric").hide();
+            $("#delrubric").hide();
+            $("#start").hide();
+        });
+        //edit rurbic show
+        $("#editrubriclink").on("click", function (event) {
+            $("#newrubric").hide();
+
+            $("#editrubric").show();
+            $("#buildrubric").hide();
+            $("#delrubric").hide();
+            $("#start").hide();
+        });
+        //del rubric show
+        $("#delrubriclink").on("click", function (event) {
+            $("#newrubric").hide();
+
+            $("#editrubric").show();
+            $("#buildrubric").hide();
+            $("#delrubric").show();
+            $("#start").hide();
+        });
+</script>
+  
+    
+    <script type="text/javascript">
+        //load rubrics
+        function onSaskReady() {
+            alert("sask");            
+            var rubricdd = $("#rubric-select");
+            for (i = 1; i < 36; i++) {
+
+                var rubricnm = window.localStorage.getItem("rubric" + i);
+                //add names if none in storage
+                if (window.localStorage.getItem("rubric" + i) !== null) {
+                    var o = new Option(i, i);
+                    $(o).html(rubricnm)
+                    rubricdd.append(o);
+                };
+            };//end for
+            $("#rubric-select").selectmenu("refresh", true);
+        }
+        //window.localStorage.clear();
+        //window.onload = onDeviceReady;
+
+       </script>
+
+
+<script>
+    //limits length 
+    $("#newrubricBtn").click(function () {
+        var rubricnm = $("#new-rubric-name").val();
+        var name_length = rubricnm.length;
+        if (name_length < 1) {
+            $("#popmessage").html("Please give your rubric a name.")
+            $("#errorpop").popup("open");
+            event.preventDefault();
+            return false;
+        };
+        if (name_length > 15) {
+            rubricnm = rubricnm.substring(0, 15);
+        }
+        //checks for name
+        $("#rubric-select option").each(function (event) {
+            if (rubricnm == $(this).text()) {
+                
+                $("#popmessage").html("You already have a rubric \n by that name. Try again.")
+
+                $("#errorpop").popup("open");
+                event.preventDefault();
+                return false;
+            };
+        });
+        //adds name to first open spot
+        $("#rubriclabel").html(rubricnm);
+        for (i = 1; i < 36; i++) {
+            if (window.localStorage.getItem("rubric" + i) === null) {
+                window.localStorage.setItem("rubric" + i, rubricnm);
+                $("#rubric-select").find("option").remove().end();
+                onDeviceReady()
+                
+                $("#buildrubric").show();
+                $("#popmessage").html("Rubric successfully created. \n Now add curriculum outcomes.");
+                $("#errorpop").popup("open");
+                $("#newrubric").hide();
+                $("#rubric-select").selectmenu("refresh", true);
+                return;
+            };
+        };
+
+        $("#popmessage").html("You already have 35 rubrics.  \n Delete a rubric if you need to add more.")
+        $("#errorpop").popup("open");
+    });
     </script>
-     </div>
-  </div>
+    <script>//delete rubric
+        $("#delrubricBtn").on("click", function () {
+            var rubricnm = $("#rubric-select").find(":selected").text();
+            $("#yesno").html("Are you sure you want to delete " + rubricnm + "?");
+            $("#dialog").popup("open");
+        });
+        $("#dialogyes").on("click", function () {
+            var rubricnm = "rubric" + $("#rubric-select").find(":selected").val();
+            localStorage.removeItem(rubricnm);
+            $("#rubric-select").find("option").remove().end();
+            onDeviceReady();
+            
+            $("#popmessage").html("Rubric successfully removed.");
+            $("#errorpop").popup("open");
+        });
+        
+        
+    </script>
+    <script type="text/javascript">//populate subjects
+        function popsub() {
+            var gr = document.getElementById("gradedd").options[gradedd.selectedIndex].value;
+            var dropdown = document.getElementById("subdd");
+            dropdown.innerHTML = "";
+            dropdown[dropdown.length] = new Option("select subject", "select subject");
+            xml = loadXMLDoc("resources/sask/xml/saskcur.xml");
+            path = "/curriculum/grade/subjects[@id='" + gr + "']"
+            // code for IE
+            if (window.ActiveXObject) {
+                var nodes = xml.selectNodes(path);
+
+                for (i = 0; i < nodes.length; i++) {
+                    ddlist[0] = nodes[i].childNodes[0].nodeValue;
+                    dropdown[dropdown.length] = new Option(ddlist[i], ddlist[i]);
+
+                }
+            }
+                // code for Mozilla, Firefox, Opera, etc.
+            else if (document.implementation && document.implementation.createDocument) {
+                var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+                var result = nodes.iterateNext();
+
+                while (result) {
+
+                    var sub = result.childNodes[0].nodeValue
+                    dropdown[dropdown.length] = new Option(sub, sub);
+                    result = nodes.iterateNext();
+                }
+            }
+        }
+    </script>
+    <script> //populate outcomes
+        $("#subdd").change(function () {
+            popout();
+        });
+        </script>
+        <script type="text/javascript">
+            function popout() {
+
+                var gr = gradedd.options[gradedd.selectedIndex].value;
+                var sb = subdd.options[subdd.selectedIndex].value;
+                loadXMLout("resources/sask/xml/" + sb + "_education_" + gr + ".xml", sb, gr);
+                $("#outtable").show();
+                $("#addout").show();
+            }
+        </script>
+    <script>// creates rubric
+
+        $('#addoutBtn').on('click', function () {
+            if ($('input:checked').length < 1) {
+                $("#popmessage").html("Select at least one outcome.");
+                $("#errorpop").popup("open");
+
+                return;
+
+            }
+            var txt = "";
+            $('input:checked').each(function (i) {
+                i++;
+                $this = $(this).closest("tr");
+                var code = $this.find('td').eq(1).text();
+                var out = $this.find('td').eq(2).text();
+
+
+                txt = txt + "<table id='band" + i + "' class='rubrictable' style='width:100%'><tr><th style='width:5%'>ID</th><th style='width:40%'>Outcome</th>\
+                        <th style='width:5%'>R</th><th style='width:10%'>Level 1</th><th style='width:10%'>Level 2</th><th style='width:20%'>Level 3</th>\
+                        <th style='width:10%'>Level 4</th></tr><tr><td>" + code + "</td><td>" + out + "</td><td></td><td>Beginning</td>\
+                        <td>Progressing</td><td>Meeting</td><td>Established</td></tr></table>";
+                        //<form><input type='range' name='"+ code + "' id='" + code + "' data-highlight='true' min='0' max='100' value='50' /></form>";
+
+            });
+
+            var rubric = txt;
+            $("#rubric").append(txt).trigger("create");           
+            $("#rubric").show();           
+            $("#outtable").hide();
+            $("#addout").hide();
+            $("#grade_con").hide();
+            $("#next").show();
+
+        });
+
+</script>
+ <script>
+
+ </script>   
+    </div><!-- /page -->
 </body>
 </html>
